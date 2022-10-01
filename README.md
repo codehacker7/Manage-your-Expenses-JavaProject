@@ -1,19 +1,25 @@
 
 # ExpenseManager
-In todays world everyone has a habit of overspending money and regretting it later. Inspired by this Expense Manager has 
-came into picture. It is similar to the concept of to-do list where a user can store the list of their pending tasks but
-only motive which is different in this app is the concept of Money Managament.
+In todays world everyone has a habit of overspending money and regretting it later. I often see that people calculate
+how much they spent in 15 days and then they often get worried by overspending. Expense Manager will help the user to
+control the expenses they make in everyday life
+
 
 This is a java based application which is used to manage expenses of a user.
-In this application a user can store their expenses and retreive them whenever 
-they wish to do so.This will help a user to keep track of their expenses 
-and control on their spending habits.
+In this application a user can store their expenses with a ID choosen by them and retreive their expenses whenever 
+they wish to do so. This app will also have a feature to set up a limit on the amount of money spent in a month. The app
+will alarm the user when the user has crossed the specific amount
 
-## Functioning
+This is intended for everyone who wish to manage their expenses and 
+control on their spending habits. As a university student, I can understand how hard it can be to manage everyday 
+expenses in day to day life, thereby by this app I want to help everyone especially university students to manage their 
+everyday expenses
 
-*Features that my expense manager will has*:
-- Users can record their expenses
-- Users will be assigned a unique id on which the data will be stored
-- Users will have the authority to access the data anytime when they enter their id in the app
-- Users will also have an option to set a monthly spending limit target which will help them to maintain a budget and
-do not over spend 
+
+## User Stories
+
+*Features that a user will like to have in the app*:
+- As a user, I want to record my expenses
+- As a user, I do not want to have my expenses mixed with other user expenses 
+- As a user, I want to have the authority to access the data anytime from the app
+- As a user, I want to have a feature to set up a limit on my expenses 
