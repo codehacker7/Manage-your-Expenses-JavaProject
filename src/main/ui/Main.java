@@ -23,8 +23,8 @@ public class Main {
     }
 
     @SuppressWarnings("checkstyle:MethodLength")
-    public static void updateexpenselimit(Customer c, int price) {
-        int expenselimit = 0;
+    public static void updateexpenselimit(Customer c, double price) {
+        double expenselimit = 0;
 
         Scanner r = new Scanner(System.in);
         if (c.getExpenseLimit() > (c.getTotalAmountSpent() + price)) {
@@ -40,7 +40,7 @@ public class Main {
             System.exit(0);
         } else {
             System.out.println(" What is the expense limit you want your limit to be updated to ??:  ");
-            expenselimit = r.nextInt();
+            expenselimit = r.nextDouble();
 
             c.setExpenseLimit(expenselimit);
 
@@ -48,7 +48,8 @@ public class Main {
         }
 
         while (c.getExpenseLimit() < (c.getTotalAmountSpent() + price)) {
-            System.out.println("This limit is still not enough to purchase the goods : ");
+            System.out.print("Your expense limit is " + c.getExpenseLimit());
+            System.out.print("This limit is still not enough to purchase the goods : ");
             System.out.println();
             System.out.println("Please update your limit. Enter yes to update it again or No to end the program : ");
 
@@ -79,7 +80,7 @@ public class Main {
         while (!input) {
             System.out.println("Please enter the name, price and date of your expense: ");
             String name = r.nextLine();
-            int price = r.nextInt();
+            double price = r.nextDouble();
             r.nextLine();
             String date = r.nextLine();
             updateexpenselimit(c, price);

@@ -7,9 +7,9 @@ public class Customer {
     int totalAmountSpent = 0;
 
     private ArrayList<String> expenselist = new ArrayList();
-    private ArrayList<Integer> itemprice = new ArrayList();
+    private ArrayList<Double> itemprice = new ArrayList();
     private ArrayList<String> expensedate = new ArrayList();
-    private int expenselimit = 2000; // by default user has expense limit of $2000
+    private double expenselimit = 2000; // by default user has expense limit of $2000
     private int size;
     private int id;
 
@@ -48,7 +48,7 @@ public class Customer {
     //  of expenses made by the user. If the user is willing to add an expense which will exceed the expense limit
     //  then the method will ask the user to update their expense limit so they can add the expense along with the date
     // This method also increments the size of the arraylist
-    public String addExpenses(String expensename, int price, String date) {
+    public String addExpenses(String expensename, double price, String date) {
 
 
         if (expenselimit < (totalAmountSpent + price)) {
@@ -70,12 +70,12 @@ public class Customer {
     }
 
     //    by default user is assigned an expense limit of $2000
-    public void setExpenseLimit(int expenselimit) {
+    public void setExpenseLimit(double expenselimit) {
 
         this.expenselimit = expenselimit;
     }
 
-    public int getExpenseLimit() {
+    public double getExpenseLimit() {
 
         return this.expenselimit;
     }
