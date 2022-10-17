@@ -54,6 +54,14 @@ public class CustomerTest {
 
     }
 
+    @Test
+    public void TestdisplayExpenses(){
+        c.addExpenses("Burger", 15, "9-12-2022");
+        assertTrue(c.getTotalAmountSpent() == 15);
+
+
+    }
+
 
 }
 

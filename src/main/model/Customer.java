@@ -89,7 +89,7 @@ public class Customer {
     public String displayExpenses() {
         String s = "";
         for (int i = 0; i < expenselist.size(); i++) {
-            s = s + "Expense:  " + expenselist.get(i) + " with the price being : "
+            s = s + " Expense:  " + expenselist.get(i) + " with the price being : "
                     + itemprice.get(i) + " was purchased on "
                     + expensedate.get(i) + "\n";
         }
