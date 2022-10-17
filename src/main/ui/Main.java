@@ -22,6 +22,7 @@ public class Main {
 
     }
 
+    // EFFECTS : This method is used to update the expense limit of the user so they can store more expenses
     @SuppressWarnings("methodlength")
     public static void updateexpenselimit(Customer c, double price) {
         double expenselimit = 0;
@@ -67,7 +68,7 @@ public class Main {
         System.out.println("Thanks for updating your expense limit to " + c.getExpenseLimit());
     }
 
-
+    // EFFECTS: This method has a variety of options from which a user can choose and store or see the expenses
     @SuppressWarnings("methodlength")
     public static void menuformain(Customer c) {
 

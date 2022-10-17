@@ -23,3 +23,4 @@ everyday expenses
 - As a user, I do not want to have my expenses mixed with other user expenses 
 - As a user, I want to have the authority to access the data anytime from the app
 - As a user, I want to have a feature to set up a limit on my expenses 
+- As a user, I want to see my stored expenses

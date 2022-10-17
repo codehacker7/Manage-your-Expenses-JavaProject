@@ -34,7 +34,7 @@ public class Customer {
 
     //REQUIRES : price>0
     //EFFECTS : This method is used to set the name of the customer and set up an id which they can use later for
-    // retrieving the data
+    // retrieving the data and this will ensure that their expenses are not mixed with some other person
     public Customer(String customername, int id) {
         setCustomername(customername);
         setId(id);
@@ -85,7 +85,7 @@ public class Customer {
     }
 
 
-    // This method is used to display all the  expenses of the user
+    // EFFECTS : This method is used to display all the  expenses of the user
     public String displayExpenses() {
         String s = "";
         for (int i = 0; i < expenselist.size(); i++) {
