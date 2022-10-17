@@ -16,13 +16,13 @@ public class Main {
         System.out.println("Enter your id which will be used by you for accessing your data later: ");
         int id = r.nextInt();
 
-        Customer user = new Customer(customername,id);
+        Customer user = new Customer(customername, id);
 
         menuformain(user);
 
     }
 
-    @SuppressWarnings("checkstyle:MethodLength")
+    @SuppressWarnings("methodlength")
     public static void updateexpenselimit(Customer c, double price) {
         double expenselimit = 0;
 
@@ -68,7 +68,7 @@ public class Main {
     }
 
 
-    @SuppressWarnings("checkstyle:MethodLength")
+    @SuppressWarnings("methodlength")
     public static void menuformain(Customer c) {
 
         Scanner r = new Scanner(System.in);
