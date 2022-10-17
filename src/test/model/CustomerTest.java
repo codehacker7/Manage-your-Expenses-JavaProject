@@ -22,6 +22,7 @@ public class CustomerTest {
         assertTrue(c.getId() == 1);
         assertTrue(d.getCustomername() == "John");
         assertTrue(d.getId() == 2);
+
     }
 
     @Test
@@ -35,6 +36,22 @@ public class CustomerTest {
         c.setExpenseLimit(3000);
         c.addExpenses("Rent", 1810, "11-09-2022");
         assertTrue(c.getTotalAmountSpent() == 2010);
+
+
+        assertEquals(20.0,c.getitemprice().get(0));
+
+        assertTrue(c.getExpensedate().get(0)=="09-09-2022");
+
+
+        assertEquals(180.0,c.getitemprice().get(1));
+
+        assertTrue(c.getExpensedate().get(1)=="10-09-2022");
+
+
+        assertEquals(1810.0,c.getitemprice().get(2));
+
+        assertTrue(c.getExpensedate().get(2)=="11-09-2022");
+
     }
 
     @Test
@@ -57,7 +74,8 @@ public class CustomerTest {
     @Test
     public void TestdisplayExpenses(){
         c.addExpenses("Burger", 15, "9-12-2022");
-        assertTrue(c.getTotalAmountSpent() == 15);
+        String v ="Expense:  Burger with the price being : 15.0 was purchased on 9-12-2022\n";
+        assertEquals(v,c.displayExpenses());
 
 
     }
