@@ -1,16 +1,16 @@
 package model;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CustomerTest {
-    
+
     Customer c;
     Customer d;
 
-    @Before
+    @BeforeEach
     public void setup() {
         c = new Customer("Alex", 1);
         d = new Customer("John", 2);
