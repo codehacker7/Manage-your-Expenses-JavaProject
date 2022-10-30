@@ -41,7 +41,7 @@ public class JsonWriter {
 
     public void close() {
         writer.close();
-        System.out.println("Done saving the data");
+
     }
 
 

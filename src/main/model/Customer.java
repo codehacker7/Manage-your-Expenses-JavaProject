@@ -49,7 +49,7 @@ public class Customer {
     }
 
 
-    @SuppressWarnings("checkstyle:MethodLength")
+    @SuppressWarnings({"checkstyle:MethodLength", "checkstyle:SuppressWarnings"})
     public JSONObject toJson(JSONObject c3, int id) {
 
         JSONArray jsonArray = c3.getJSONArray("customer");
