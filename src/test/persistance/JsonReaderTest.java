@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import persistence.JsonReader;
 
 import java.io.IOException;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
