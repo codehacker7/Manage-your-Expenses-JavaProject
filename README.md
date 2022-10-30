@@ -19,8 +19,8 @@ everyday expenses
 ## User Stories
 
 *Features that a user will like to have in the app*:
-- As a user, I want to record my expenses
-- As a user, I do not want to have my expenses mixed with other user expenses 
-- As a user, I want to have the authority to access the data anytime from the app
+- As a user, I want to store my expenses
+- As a user, I want to have an id through which I can access my expenses
 - As a user, I want to have a feature to set up a limit on my expenses 
-- As a user, I want to see my stored expenses
+- As a user, I want to view my stored expenses
+- As a user, I want to be able to update my expense limit

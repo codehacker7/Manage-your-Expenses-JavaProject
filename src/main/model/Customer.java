@@ -1,20 +1,27 @@
 package model;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import javax.print.DocFlavor;
 import java.util.ArrayList;
+import java.util.List;
+
 
 public class Customer {
 
-    int totalAmountSpent = 0;
-
-    private ArrayList<String> expenselist = new ArrayList();
-    private ArrayList<Double> itemprice = new ArrayList();
-    private ArrayList<String> expensedate = new ArrayList();
-    private double expenselimit = 2000; // by default user has expense limit of $2000
-    private int size;
     private int id;
-
     private String customername;
+    List<Expenses> expenses = new ArrayList<>();
+    List<Expenses> readexpenses = new ArrayList<>();
 
+
+    public Customer(String name, int id) {
+        setCustomername(name);
+        setId(id);
+
+
+    }
 
     public int getId() {
         return id;
@@ -24,6 +31,7 @@ public class Customer {
         this.id = id;
     }
 
+
     public String getCustomername() {
         return customername;
     }
@@ -32,101 +40,158 @@ public class Customer {
         this.customername = customername;
     }
 
-    //REQUIRES : price>0
-    //EFFECTS : This method is used to set the name of the customer and set up an id which they can use later for
-    // retrieving the data and this will ensure that their expenses are not mixed with some other person
-    public Customer(String customername, int id) {
-        setCustomername(customername);
-        setId(id);
+    public void addExpenses(Expenses c) {
+        expenses.add(c);
+    }
+
+    public List<Expenses> getExpenses() {
+        return expenses;
     }
 
 
-    //REQUIRES : price>0
-    //MODIFIES: this
-    //EFFECTS: It is bascially used to store the name of the expense of the user along with the price and dateof expense
-    //- This method only works if the expense limit which is set up by the user is currently more than total_amount
-    //  of expenses made by the user. If the user is willing to add an expense which will exceed the expense limit
-    //  then the method will ask the user to update their expense limit so they can add the expense along with the date
-    // This method also increments the size of the arraylist
-    public String addExpenses(String expensename, double price, String date) {
+    @SuppressWarnings("checkstyle:MethodLength")
+    public JSONObject toJson(JSONObject c3, int id) {
+
+        JSONArray jsonArray = c3.getJSONArray("customer");
+        JSONObject json = new JSONObject();
+        boolean value1 = false;
 
 
-        if (expenselimit < (totalAmountSpent + price)) {
-            return "You will cross your expense limit of $ " + getExpenseLimit() + " :" + " "
-                    + "If you will still like to store this expense please update your expense limit";
+        for (Object jsonattributes : jsonArray) {
+            JSONObject jsonobject = (JSONObject) jsonattributes;
+            if ((int) jsonobject.get("id") == id) {
+                value1 = true;
+                JSONArray expensesarray = jsonobject.getJSONArray("expenses");
+                for (Expenses c : expenses) {
+
+                    for (int j = 0; j < c.getExpenseList().size(); j += 3) {
+                        JSONObject json2 = new JSONObject();
+
+                        json2.put("expensename", c.getExpenseList().get(j));
+                        json2.put("price", c.getExpenseList().get(j + 1));
+                        json2.put("date", c.getExpenseList().get(j + 2));
+                        json2.put("category", c.getCategory().get(j / 3));
+
+                        expensesarray.put(json2);
+
+                    }
+                }
+
+
+            }
+
+        }
+
+        if (value1 == true) {
+            json.put("customer", jsonArray);
+            return json;
         } else {
 
-            expenselist.add(expensename);
-            expensedate.add(date);
-            itemprice.add(price);
-            totalAmountSpent += price;
-            size++;
+            JSONObject newjson = new JSONObject();
+            newjson.put("name", customername);
+            newjson.put("id", id);
+            newjson.put("expenses", forExpenses());
+            jsonArray.put(newjson);
+            json.put("customer", jsonArray);
+            return json;
 
-            return "Expense:  " + expenselist.get(expenselist.size() - 1) + " with the price being : "
-                    + itemprice.get(itemprice.size() - 1) + " has been added successfully on "
-                    + expensedate.get(expensedate.size() - 1);
 
         }
     }
 
-    //    by default user is assigned an expense limit of $2000
-    public void setExpenseLimit(double expenselimit) {
 
-        this.expenselimit = expenselimit;
-    }
+    public JSONArray forExpenses() {
 
-    public double getExpenseLimit() {
-
-        return this.expenselimit;
-    }
-
-    public int getTotalAmountSpent() {
-        return this.totalAmountSpent;
-    }
+        JSONArray jsonArray = new JSONArray();
 
 
-    // EFFECTS : This method is used to display all the  expenses of the user
-    public String displayExpenses() {
-        String s = "";
-        for (int i = 0; i < expenselist.size(); i++) {
-            s = s + "Expense:  " + expenselist.get(i) + " with the price being : "
-                    + itemprice.get(i) + " was purchased on "
-                    + expensedate.get(i) + "\n";
+        for (Expenses c : expenses) {
+            for (int j = 0; j < c.getExpenseList().size(); j += 3) {
+                JSONObject json = new JSONObject();
+
+
+                json.put("expensename", c.getExpenseList().get(j));
+                json.put("price", c.getExpenseList().get(j + 1));
+                json.put("date", c.getExpenseList().get(j + 2));
+                json.put("category", c.getCategory().get(j / 3));
+
+                jsonArray.put(json);
+
+            }
         }
-        return s;
+
+        System.out.println("Out of the loop");
+
+
+        return jsonArray;
+    }
+
+
+    public JSONObject emptyvalue(Customer c, int id) {
+
+
+        JSONObject jsonObject = new JSONObject();
+
+        jsonObject.put("customer", expenses2());
+
+        return jsonObject;
+
 
 
     }
-//    REQUIRES: index>0
-//    MODIFIES: this
-//    EFFECTS: This method is used to completely remove a particular expense of the user
 
-    public void removeExpense(int index) {
+    public JSONArray expenses2() {
 
-        expenselist.remove(index);
-        itemprice.remove(index);
-        expensedate.remove(index);
-        size--;
+        JSONArray jsonArray = new JSONArray();
+
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("name", customername);
+        jsonObject.put("id", id);
+        jsonObject.put("expenses", expense3());
+
+        jsonArray.put(jsonObject);
+        return jsonArray;
 
 
     }
 
-    public ArrayList getExpenselist() {
+    public JSONArray expense3() {
+        JSONArray jsonArray = new JSONArray();
 
-        return expenselist;
+
+        for (Expenses c : expenses) {
+            for (int j = 0; j < c.getExpenseList().size(); j += 3) {
+                JSONObject json = new JSONObject();
+
+
+                json.put("expensename", c.getExpenseList().get(j));
+                json.put("price", c.getExpenseList().get(j + 1));
+                json.put("date", c.getExpenseList().get(j + 2));
+                json.put("category", c.getCategory().get(j / 3));
+
+                jsonArray.put(json);
+
+            }
+        }
+
+        return jsonArray;
     }
 
-    public ArrayList getitemprice() {
-
-        return itemprice;
+    public void addreadCustomerExpense(Expenses c) {
+        readexpenses.add(c);
     }
 
-    public ArrayList getExpensedate() {
-        return expensedate;
-    }
-
-    public int getSize() {
-        return size;
+    public List<Expenses> getreadCustomerExpense() {
+        return readexpenses;
     }
 
 }
+
+
+
+
+
+
+
+
+
