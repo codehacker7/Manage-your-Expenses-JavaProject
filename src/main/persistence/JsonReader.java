@@ -23,7 +23,7 @@ public class JsonReader {
     public Customer read(int id) throws IOException {
         String jsonData = readFile(source);
         JSONObject jsonObject = new JSONObject(jsonData);
-        return parseCustomer(jsonObject, id);
+        return parseCustomer2(jsonObject, id);
     }
 
     public JSONObject read() throws IOException {
@@ -57,7 +57,7 @@ public class JsonReader {
     }
 
     // EFFECTS: parses workroom from JSON object and returns it
-    private Customer parseCustomer(JSONObject jsonObject, int id) {
+    private Customer parseCustomer2(JSONObject jsonObject, int id) {
 
         JSONArray customer = jsonObject.getJSONArray("customer");
         Customer addedcustomer = null;
