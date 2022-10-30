@@ -15,7 +15,7 @@ public class Expenses {
     private double expenselimit = 2000; // by default user has expense limit of $2000
     private int size;
     private int count;
-//    private String expenseCategory;
+    //    private String expenseCategory;
     private double totalAmountSpent = 0;
 //    Customer cus;
 
@@ -228,6 +228,7 @@ public class Expenses {
 
 
     }
+
     public void addCategory(String category, String expensename, double price, String date) {
 
         if (category.equalsIgnoreCase("Education")) {
@@ -243,6 +244,7 @@ public class Expenses {
 
         }
     }
+
     public void categoryhelper(ArrayList c, String expensename, double price, String date) {
         c.add(expensename);
         c.add(price);
@@ -253,6 +255,7 @@ public class Expenses {
         category.add(expenseCategory);
 
     }
+
     public int getSize() {
         return size;
     }
@@ -276,6 +279,7 @@ public class Expenses {
     public ArrayList getExpenseList() {
         return expenseList;
     }
+
     public ArrayList<String> getCategory() {
         return category;
     }
