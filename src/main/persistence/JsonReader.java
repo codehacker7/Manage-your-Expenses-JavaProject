@@ -11,7 +11,9 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.stream.Stream;
 
-
+/*
+This class is used to read data from json file
+ */
 public class JsonReader {
 
     private String source;
@@ -20,12 +22,14 @@ public class JsonReader {
         this.source = source;
     }
 
+    //EFFECTS : This method is used to read an users data with a particular id
     public Customer read(int id) throws IOException {
         String jsonData = readFile(source);
         JSONObject jsonObject = new JSONObject(jsonData);
         return parseCustomer2(jsonObject, id);
     }
 
+    //EFFECTS : This method is used to read the wholw jsonfile and parse it to a json object and return it
     public JSONObject read() throws IOException {
         String jsonData = readFile(source);
         JSONObject jsonObject = new JSONObject(jsonData);
@@ -33,7 +37,7 @@ public class JsonReader {
         return parseCustomer(jsonObject);
     }
 
-
+    //EFFECTS : This method assings a customer jsonarray to a new array
     private JSONObject parseCustomer(JSONObject jsonObject) {
         JSONArray customer = jsonObject.getJSONArray("customer");
         JSONObject newJson = new JSONObject();
@@ -41,9 +45,9 @@ public class JsonReader {
         try {
             JSONArray check = newJson.getJSONArray("customer");
         } catch (JSONException c) {
-            newJson.put("customer",customer);
+            newJson.put("customer", customer);
         }
-        return  newJson;
+        return newJson;
     }
 
 
@@ -56,7 +60,7 @@ public class JsonReader {
         return contentBuilder.toString();
     }
 
-    // EFFECTS: parses workroom from JSON object and returns it
+    // EFFECTS: parses Customer from JSON object and returns it
     private Customer parseCustomer2(JSONObject jsonObject, int id) {
 
         JSONArray customer = jsonObject.getJSONArray("customer");
@@ -76,7 +80,6 @@ public class JsonReader {
         }
 
 
-
         if (addedcustomer == null) {
             return addedcustomer = new Customer("No details found", -1);
         }
@@ -84,6 +87,7 @@ public class JsonReader {
         return addedcustomer;
     }
 
+    //EFFECTS : This method is used to add expensename , date ,category and price to the expenses array in json file
     private void addExpenses(JSONArray expensesarray, Customer addedcustomer) {
 
         Expenses expenses = new Expenses();

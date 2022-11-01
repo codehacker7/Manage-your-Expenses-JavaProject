@@ -10,7 +10,7 @@ public class Expenses {
     private ArrayList eatOut = new ArrayList();
     private ArrayList grocery = new ArrayList();
     private ArrayList<String> category = new ArrayList();
-//    private static int var = 0;
+    //    private static int var = 0;
 //    private static int categoryvar = 0;
     private double expenselimit = 2000; // by default user has expense limit of $2000
     private int size;
@@ -89,6 +89,7 @@ public class Expenses {
 
     }
 
+    // EFFECTS : This method is used to display all the entertainment expenses of the user
     public String displayEntertainmentExpenses() {
         String s = "";
         for (int i = 0; i < entertainment.size(); i += 3) {
@@ -99,6 +100,7 @@ public class Expenses {
         return s;
     }
 
+    // EFFECTS : This method is used to display all the educational  expenses of the user
     public String displayEducationExpenses() {
         String s = "";
         for (int i = 0; i < education.size(); i += 3) {
@@ -109,6 +111,7 @@ public class Expenses {
         return s;
     }
 
+    // EFFECTS : This method is used to display all the grocery expenses of the user
     public String displayGroceryExpenses() {
         String s = "";
         for (int i = 0; i < grocery.size(); i += 3) {
@@ -119,6 +122,7 @@ public class Expenses {
         return s;
     }
 
+    // EFFECTS : This method is used to display all the eatout expenses of the user
     public String displayEatOutExpenses() {
         String s = "";
         for (int i = 0; i < eatOut.size(); i += 3) {
@@ -187,6 +191,7 @@ public class Expenses {
 
     }
 
+    // EFFECTS : This method checks if the arraylist is of type expense,education,entertainment or grocery
     public void removeRelatingExpense(int expensenumber, String nameofexpense, double price, String date) {
 
         if (category.get(expensenumber - 1).equalsIgnoreCase("Education")) {
@@ -201,6 +206,8 @@ public class Expenses {
 
     }
 
+    // EFFECTS : This method is used to remove all the relating expenses from one of 4 arraylist like
+    // education,entertainment,eatout and grocery
     public void removeRelatingExpensehelper(ArrayList c, String nameofexpense, double price, String date,
                                             int expensenumber) {
 
@@ -229,6 +236,7 @@ public class Expenses {
 
     }
 
+    // EFFECTS : This method checks if the arraylist is of type expense,education,entertainment or grocery
     public void addCategory(String category, String expensename, double price, String date) {
 
         if (category.equalsIgnoreCase("Education")) {
@@ -245,12 +253,14 @@ public class Expenses {
         }
     }
 
+    // EFFECTS : This method adds the expense to a particular arraylist
     public void categoryhelper(ArrayList c, String expensename, double price, String date) {
         c.add(expensename);
         c.add(price);
         c.add(date);
     }
 
+    //    this method adds all the expenses to a particular arraylist
     public void setExpenseCategory(String expenseCategory) {
         category.add(expenseCategory);
 

@@ -7,7 +7,11 @@ import javax.print.DocFlavor;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
 
+This class is used to access the name and id of the customer
+
+ */
 public class Customer {
 
     private int id;
@@ -15,7 +19,8 @@ public class Customer {
     List<Expenses> expenses = new ArrayList<>();
     List<Expenses> readexpenses = new ArrayList<>();
 
-
+    //  REQUIRES : id>=0
+//  EFFECTS : It is used to set the name and the id of the customer
     public Customer(String name, int id) {
         setCustomername(name);
         setId(id);
@@ -40,6 +45,7 @@ public class Customer {
         this.customername = customername;
     }
 
+    //EFFECTS : It is used to add the expenses which are made by the user to an expenses arraylist
     public void addExpenses(Expenses c) {
         expenses.add(c);
     }
@@ -48,6 +54,8 @@ public class Customer {
         return expenses;
     }
 
+
+    //EFFECTS : It is used to add either a new customer to the system or add existing expenses of an existing user
 
     @SuppressWarnings({"checkstyle:MethodLength", "checkstyle:SuppressWarnings"})
     public JSONObject toJson(JSONObject c3, int id) {
@@ -99,7 +107,8 @@ public class Customer {
         }
     }
 
-
+    //EFFECTS : If the customer is a new customer this method is used to put all the attributes such as
+    // expensename, price, date and category to the expenses array
     public JSONArray forExpenses() {
 
         JSONArray jsonArray = new JSONArray();
@@ -120,13 +129,11 @@ public class Customer {
             }
         }
 
-        System.out.println("Out of the loop");
-
 
         return jsonArray;
     }
 
-
+    //EFFECTS : This method is made so that when there is no customer array in the system it can write that
     public JSONObject emptyvalue(Customer c, int id) {
 
 
@@ -137,9 +144,10 @@ public class Customer {
         return jsonObject;
 
 
-
     }
 
+    //EFFECTS : This method is made so that when there is no customer array in the system it can
+    //write the name id and expenses and make an customer array
     public JSONArray expenses2() {
 
         JSONArray jsonArray = new JSONArray();
@@ -155,6 +163,7 @@ public class Customer {
 
     }
 
+    //EFFECTS : This method is used to add the attributes of expenses to the expenses array
     public JSONArray expense3() {
         JSONArray jsonArray = new JSONArray();
 
@@ -177,6 +186,7 @@ public class Customer {
         return jsonArray;
     }
 
+    //EFFECTS : This method is used to add expenses to the readexpenses arraylist
     public void addreadCustomerExpense(Expenses c) {
         readexpenses.add(c);
     }
