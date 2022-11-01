@@ -49,7 +49,7 @@ public class JsonWriterTest {
         }
     }
     @Test
-    void testWriterGeneralWorkroom() {
+    void testWriterGeneralExpenses() {
         try {
             Customer wr = new Customer("Kavyansh",1);
             Customer wr1 = new Customer("Pranjal",2);

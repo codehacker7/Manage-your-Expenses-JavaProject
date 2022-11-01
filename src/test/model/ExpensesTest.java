@@ -15,12 +15,13 @@ public class ExpensesTest {
         expenses = new Expenses();
 
     }
+
     @Test
-    public void TestConstructor(){
+    public void TestConstructor() {
         expenses = new Expenses("Pizza", 20.2, "20-09-2022", "Eatout");
 
         assertTrue(expenses.getSize() == 3);
-        assertTrue(expenses.getTotalAmountSpent() == 20.2 );
+        assertTrue(expenses.getTotalAmountSpent() == 20.2);
 
     }
 
@@ -55,6 +56,8 @@ public class ExpensesTest {
         assertTrue(expenses.getExpenseList().size() == 6);
         assertEquals(expenses.getExpenseList().get(3), "ChocoLavaCake1");
         expenses.removeExpense(1);
+        assertTrue(expenses.getExpenseList().size() == 3);
+
 
     }
 
@@ -65,6 +68,7 @@ public class ExpensesTest {
         expenses.addExpenses("ChocoLavaCake1", 7, "27-10-2022", "Entertainment");
         expenses.addExpenses("ChocoLavaCake2", 9.9, "29-10-2022", "Entertainment");
         assertTrue(expenses.getEntertainment().size() == 9);
+
         expenses.removeRelatingExpense(3, "ChocoLavaCake1", 7.0, "27-10-2022");
         assertTrue(expenses.getEntertainment().size() == 6);
         assertTrue(expenses.getEntertainment().get(3) == "ChocoLavaCake2");
@@ -74,6 +78,16 @@ public class ExpensesTest {
         expenses.removeRelatingExpense(3, "UBC FEE", 9.9, "29-10-2022");
         expenses.addExpenses("Grocery", 9.9, "29-10-2022", "Grocery");
         expenses.removeRelatingExpense(3, "UBC FEE", 9.9, "29-10-2022");
+
+    }
+
+    @Test
+    public void testMoreRemove() {
+        expenses.addExpenses("Pizza", 20.2, "20-09-2022", "Eatout");
+        expenses.addExpenses("Butter", 10.2, "20-09-2022", "Grocery");
+        assertEquals("Eatout", expenses.getCategory().get(0));
+        expenses.removeRelatingExpense(1, "Pizza", 20.2, "20-09-2022");
+        expenses.removeRelatingExpense(1, "Butter", 10.2, "20-09-2022");
 
     }
 

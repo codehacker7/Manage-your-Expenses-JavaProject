@@ -10,8 +10,8 @@ public class Expenses {
     private ArrayList eatOut = new ArrayList();
     private ArrayList grocery = new ArrayList();
     private ArrayList<String> category = new ArrayList();
-    private static int var = 0;
-    private static int categoryvar = 0;
+//    private static int var = 0;
+//    private static int categoryvar = 0;
     private double expenselimit = 2000; // by default user has expense limit of $2000
     private int size;
     private int count;

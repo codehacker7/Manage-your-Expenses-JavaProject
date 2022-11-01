@@ -9,6 +9,7 @@ public class CustomerTest {
 
 
     Customer c;
+    Expenses s;
 
     @BeforeEach
     public void setup(){
@@ -21,6 +22,19 @@ public class CustomerTest {
         assertTrue(c.getCustomername() == "Kavyansh");
         assertTrue(c.getId() == 1);
 
+
+
+    }
+
+    @Test
+    public void TestExpenses(){
+        s = new Expenses("pizza",10,"20-09-2022","Eatout");
+        c.addExpenses(s);
+         c.addreadCustomerExpense(s);
+        assertTrue(s.getSize() == 3);
+        assertTrue(s.getTotalAmountSpent() == 10 );
+        assertTrue(c.getExpenses().size()==1);
+        assertTrue(c.getreadCustomerExpense().size()==1);
     }
 
 
