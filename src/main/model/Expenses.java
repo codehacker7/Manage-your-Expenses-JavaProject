@@ -19,10 +19,15 @@ public class Expenses {
     private double totalAmountSpent = 0;
 //    Customer cus;
 
+
+    //REQUIRES : price>=0
+    //EFFECTS:This constructor is used to add the name of the expenses along with price and date and category
     public Expenses(String expensename, double price, String date, String category) {
         addExpenses(expensename, price, date, category);
     }
 
+    //EFFECTS : This is an empty constructor created so that if one just wants to access the attributes
+    //of the Expenses class they can do so without actually being forced to put the full details of expenses
     public Expenses() {
     }
 

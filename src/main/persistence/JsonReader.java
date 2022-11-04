@@ -18,6 +18,7 @@ public class JsonReader {
 
     private String source;
 
+  //EFFECTS : This constructor is used to set the source of the file which you are reading from
     public JsonReader(String source) {
         this.source = source;
     }

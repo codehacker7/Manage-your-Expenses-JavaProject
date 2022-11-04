@@ -116,6 +116,18 @@
                 "price": 10,
                 "category": "Eatout",
                 "expensename": "Pasta"
+            },
+            {
+                "date": "20-09-2003",
+                "price": 20,
+                "category": "Eatout",
+                "expensename": "Pizza"
+            },
+            {
+                "date": "11-01-2022",
+                "price": 10,
+                "category": "Eatout",
+                "expensename": "Pasta"
             }
         ]
     }

@@ -15,37 +15,42 @@
                 "category": "Eatout",
                 "expensename": "Pizza"
             },
-          {
-            "date": "20-12-2022",
-            "price": 200,
-            "category": "Education",
-            "expensename": "UBCBooks"
-          },  {
-            "date": "20-12-2022",
-            "price": 200,
-            "category": "Education",
-            "expensename": "UBCBooks"
-          },  {
-            "date": "20-12-2022",
-            "price": 200,
-            "category": "Education",
-            "expensename": "UBCBooks"
-          },  {
-            "date": "20-12-2022",
-            "price": 200,
-            "category": "Education",
-            "expensename": "UBCBooks"
-          },  {
-            "date": "20-12-2022",
-            "price": 200,
-            "category": "Education",
-            "expensename": "UBCBooks"
-          },  {
-            "date": "20-12-2022",
-            "price": 200,
-            "category": "Education",
-            "expensename": "UBCBooks"
-          }
+            {
+                "date": "20-12-2022",
+                "price": 200,
+                "category": "Education",
+                "expensename": "UBCBooks"
+            },
+            {
+                "date": "20-12-2022",
+                "price": 200,
+                "category": "Education",
+                "expensename": "UBCBooks"
+            },
+            {
+                "date": "20-12-2022",
+                "price": 200,
+                "category": "Education",
+                "expensename": "UBCBooks"
+            },
+            {
+                "date": "20-12-2022",
+                "price": 200,
+                "category": "Education",
+                "expensename": "UBCBooks"
+            },
+            {
+                "date": "20-12-2022",
+                "price": 200,
+                "category": "Education",
+                "expensename": "UBCBooks"
+            },
+            {
+                "date": "20-12-2022",
+                "price": 200,
+                "category": "Education",
+                "expensename": "UBCBooks"
+            }
         ]
     },
     {
@@ -89,6 +94,24 @@
                 "price": 30,
                 "category": "Entertainment",
                 "expensename": "bicycle"
+            }
+        ]
+    },
+    {
+        "name": "abc",
+        "id": 5,
+        "expenses": [
+            {
+                "date": "20-09-2022",
+                "price": 20.4,
+                "category": "Eatout",
+                "expensename": "Pizza"
+            },
+            {
+                "date": "20-09-2022",
+                "price": 200,
+                "category": "Education",
+                "expensename": "UBCFEE"
             }
         ]
     }

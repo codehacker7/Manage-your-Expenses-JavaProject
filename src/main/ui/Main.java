@@ -145,6 +145,7 @@ public class Main {
 
     }
 
+    //EFFECTS : This method is used to save expenses of the user within a given id
     public static void saveExpenses(Customer c, int id) throws IOException {
         JsonReader reader = new JsonReader(destination);
         JSONObject c3 = reader.read(); // FULL JSON OBJECT
@@ -154,6 +155,9 @@ public class Main {
         writer1.close();
     }
 
+    //EFFECTS : This method takes in an id as an input from the user and reads the expenses from the user
+    //with the given id and if the id is not found in the database it just returns no account has been found
+    //and you can create a new one
     public static void readExpenses(int id) throws IOException {
         JsonReader reader = new JsonReader(destination);
         Customer c = reader.read(id);
