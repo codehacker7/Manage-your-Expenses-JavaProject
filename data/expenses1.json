@@ -1,0 +1,14 @@
+{"customer": [
+  {
+    "name": "kavyansh",
+    "id": 1,
+    "expenses": [
+      {
+        "date": "20-09-2022",
+        "price": 20,
+        "category": "Eatout",
+        "expensename": "Pasta"
+      }
+    ]
+  }
+  ]}
