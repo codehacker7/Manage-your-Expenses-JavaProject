@@ -159,14 +159,11 @@ public class Customer {
 
         jsonArray.put(jsonObject);
         return jsonArray;
-
-
     }
 
     //EFFECTS : This method is used to add the attributes of expenses to the expenses array
     public JSONArray expense3() {
         JSONArray jsonArray = new JSONArray();
-
 
         for (Expenses c : expenses) {
             for (int j = 0; j < c.getExpenseList().size(); j += 3) {

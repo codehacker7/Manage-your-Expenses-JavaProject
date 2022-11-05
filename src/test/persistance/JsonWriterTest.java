@@ -10,9 +10,7 @@ import persistence.JsonWriter;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class JsonWriterTest {
 
@@ -33,6 +31,10 @@ public class JsonWriterTest {
 
         try {
             Customer c = new Customer("Kavyansh", 1);
+            Expenses exp = new Expenses();
+            exp.addExpenses("Pizza", 20, "20-09-2003", "Eatout");
+            c.addExpenses(exp);
+
             JsonWriter writer = new JsonWriter("./data/testWriterEmptyExpenses.json");
             writer.open();
             writer.emptyFileWrite(c, c.getId());
@@ -42,6 +44,12 @@ public class JsonWriterTest {
             c = reader.read(1);
             assertEquals("Kavyansh", c.getCustomername());
             assertEquals(1, c.getId());
+            assertEquals("Pizza", c.getreadCustomerExpense().get(0).getExpenseList().get(0));
+            assertEquals(20.0, c.getreadCustomerExpense().get(0).getExpenseList().get(1));
+            assertEquals("20-09-2003", c.getreadCustomerExpense().get(0).getExpenseList().get(2));
+            assertEquals("Eatout", c.getreadCustomerExpense().get(0).getCategory().get(0));
+
+
 
 
         } catch (IOException e) {
@@ -99,7 +107,7 @@ public class JsonWriterTest {
 
             JsonWriter writer = new JsonWriter("./data/testWriterGeneralExpenses.json");
             writer.open();
-            writer.write(jsonObject,w3,w3.getId());
+            writer.write(jsonObject, w3, w3.getId());
             writer.write(jsonObject, wr1, wr1.getId());
             writer.close();
 
