@@ -30,7 +30,7 @@ public class JsonReader {
         return parseCustomer2(jsonObject, id);
     }
 
-    //EFFECTS : This method is used to read the wholw jsonfile and parse it to a json object and return it
+    //EFFECTS : This method is used to read the whole jsonfile and parse it to a json object and return it
     public JSONObject read() throws IOException {
         String jsonData = readFile(source);
         JSONObject jsonObject = new JSONObject(jsonData);
