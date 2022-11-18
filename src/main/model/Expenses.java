@@ -1,6 +1,13 @@
 package model;
 
+import persistence.JsonReader;
+
 import java.util.ArrayList;
+
+/*
+This class is used to manage all the expenses of the user
+ */
+
 
 public class Expenses {
 
@@ -17,6 +24,7 @@ public class Expenses {
     private int count;
     //    private String expenseCategory;
     private double totalAmountSpent = 0;
+    public static final String destination = "./data/expenses.json";
 //    Customer cus;
 
 
@@ -41,27 +49,30 @@ public class Expenses {
     // This method also increments the size of the arraylist
     public String addExpenses(String expensename, double price, String date, String category) {
 
-        if (expenselimit < (totalAmountSpent + price)) {
-            return "You will cross your expense limit of $ " + getExpenseLimit() + " :" + " "
-                    + "If you will still like to store this expense please update your expense limit";
-        } else {
-
-            expenseList.add(expensename);
-            expenseList.add(price);
-            expenseList.add(date);
-            setExpenseCategory(category);
-            addCategory(category, expensename, price, date);
+//        JsonReader reader = new JsonReader(destination);
+//        Customer c3 = reader.read(id);
 
 
-            totalAmountSpent += price;
-            size += 3;
+//        if (expenselimit < (totalAmountSpent + price)) {
+//            return "You will cross your expense limit of $ " + getExpenseLimit() + " :" + " "
+//                    + "If you will still like to store this expense please update your expense limit";
+//        } else {
+
+        expenseList.add(expensename);
+        expenseList.add(price);
+        expenseList.add(date);
+        setExpenseCategory(category);
+        addCategory(category, expensename, price, date);
 
 
-            return "Expense:  " + expenseList.get(size - 3) + " with the price being : "
-                    + expenseList.get(size - 2) + " has been added successfully on "
-                    + expenseList.get(size - 1);
+        totalAmountSpent += price;
+        size += 3;
 
-        }
+
+        return "Expense:  " + expenseList.get(size - 3) + " with the price being : "
+                + expenseList.get(size - 2) + " has been added successfully on "
+                + expenseList.get(size - 1);
+
 
     }
 

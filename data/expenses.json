@@ -1,118 +1,98 @@
 {"customer": [
     {
+        "expenselimit": 22222,
         "name": "kavyansh",
         "id": 1,
         "expenses": [
             {
-                "date": "20-09-2022",
+                "date": "20 Sep 2022",
                 "price": 20,
                 "category": "Eatout",
                 "expensename": "Pasta"
             },
             {
-                "date": "20-09-2003",
+                "date": "20 Sep 2022",
                 "price": 25,
                 "category": "Eatout",
                 "expensename": "Pizza"
             },
             {
-                "date": "20-12-2022",
+                "date": "20 Sep 2022",
                 "price": 200,
                 "category": "Education",
                 "expensename": "UBCBooks"
             },
             {
-                "date": "20-12-2022",
+                "date": "20 Sep 2022",
                 "price": 200,
                 "category": "Education",
                 "expensename": "UBCBooks"
             },
             {
-                "date": "20-12-2022",
+                "date": "20 Sep 2022",
                 "price": 200,
                 "category": "Education",
                 "expensename": "UBCBooks"
             },
             {
-                "date": "20-12-2022",
+                "date": "20 Sep 2022",
                 "price": 200,
                 "category": "Education",
                 "expensename": "UBCBooks"
             },
             {
-                "date": "20-12-2022",
+                "date": "20 Sep 2022",
                 "price": 200,
                 "category": "Education",
                 "expensename": "UBCBooks"
             },
             {
-                "date": "20-12-2022",
+                "date": "20 Sep 2022",
                 "price": 200,
                 "category": "Education",
                 "expensename": "UBCBooks"
+            },
+            {
+                "date": "12 Nov 2022",
+                "price": 30.5,
+                "category": "Eatout",
+                "expensename": "Dominoz"
+            },
+            {
+                "date": "10 Nov 2022",
+                "price": 54.5,
+                "category": "Eatout",
+                "expensename": "newIndianBuffet"
+            },
+            {
+                "date": "6 Apr 2025",
+                "price": 23,
+                "category": "Education",
+                "expensename": "kk"
+            },
+            {
+                "date": "1 Jan 2022",
+                "price": 2,
+                "category": "Grocery",
+                "expensename": "kk"
+            },
+            {
+                "date": "1 Jan 2022",
+                "price": 4,
+                "category": "Grocery",
+                "expensename": "ss"
             }
         ]
     },
     {
-        "name": "Pranjal",
+        "expenselimit": 3000,
+        "name": "Prashant",
         "id": 2,
         "expenses": [{
-            "date": "21-12-2021",
-            "price": 2000,
-            "category": "Education",
-            "expensename": "UVIC"
+            "date": "1 Jan 2022",
+            "price": 10,
+            "category": "Other",
+            "expensename": "Pizza"
         }]
-    },
-    {
-        "name": "SteveWolfman",
-        "id": 9,
-        "expenses": [{
-            "date": "20-09-2022",
-            "price": 30,
-            "category": "Entertainment",
-            "expensename": "bicycle"
-        }]
-    },
-    {
-        "name": "AshishDawar",
-        "id": 10,
-        "expenses": [
-            {
-                "date": "20-09-2022",
-                "price": 20,
-                "category": "Eatout",
-                "expensename": "FARMERWRAP"
-            },
-            {
-                "date": "20-09-2022",
-                "price": 30,
-                "category": "Entertainment",
-                "expensename": "bicycle"
-            },
-            {
-                "date": "20-09-2022",
-                "price": 30,
-                "category": "Entertainment",
-                "expensename": "bicycle"
-            }
-        ]
-    },
-    {
-        "name": "abc",
-        "id": 5,
-        "expenses": [
-            {
-                "date": "20-09-2022",
-                "price": 20.4,
-                "category": "Eatout",
-                "expensename": "Pizza"
-            },
-            {
-                "date": "20-09-2022",
-                "price": 200,
-                "category": "Education",
-                "expensename": "UBCFEE"
-            }
-        ]
     }
 ]}

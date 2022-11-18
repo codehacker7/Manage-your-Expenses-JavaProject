@@ -19,7 +19,7 @@ public class CustomerTest {
 
     @Test
     public void TestConstructor() {
-        assertTrue(c.getCustomername() == "Kavyansh");
+        assertTrue(c.getCustomername().equals("Kavyansh"));
         assertTrue(c.getId() == 1);
 
 

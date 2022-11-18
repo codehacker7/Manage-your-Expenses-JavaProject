@@ -48,6 +48,7 @@ public class JsonWriterTest {
             assertEquals(20.0, c.getreadCustomerExpense().get(0).getExpenseList().get(1));
             assertEquals("20-09-2003", c.getreadCustomerExpense().get(0).getExpenseList().get(2));
             assertEquals("Eatout", c.getreadCustomerExpense().get(0).getCategory().get(0));
+            assertEquals(2000.0, c.getreadCustomerExpense().get(0).getExpenseLimit());
 
 
 
@@ -63,6 +64,7 @@ public class JsonWriterTest {
             Customer wr = new Customer("Kavyansh", 1);
             Customer wr1 = new Customer("Pranjal", 2);
             Expenses c = new Expenses();
+
 
 
 //            Customer wr3 = new Customer("Kevin",3);
@@ -108,6 +110,7 @@ public class JsonWriterTest {
             JsonWriter writer = new JsonWriter("./data/testWriterGeneralExpenses.json");
             writer.open();
             writer.write(jsonObject, w3, w3.getId());
+            //this should only be executed when you need to increase your code coverege  on auto bot
             writer.write(jsonObject, wr1, wr1.getId());
             writer.close();
 
@@ -124,6 +127,7 @@ public class JsonWriterTest {
             assertEquals(10.0, wr.getreadCustomerExpense().get(0).getExpenseList().get(4));
             assertEquals("11-01-2022", wr.getreadCustomerExpense().get(0).getExpenseList().get(5));
             assertEquals("Eatout", wr.getreadCustomerExpense().get(0).getCategory().get(1));
+            assertEquals(2000.0, wr.getreadCustomerExpense().get(0).getExpenseLimit());
 
 
             wr1 = reader1.read(2);
@@ -134,6 +138,7 @@ public class JsonWriterTest {
             assertEquals(20.0, wr.getreadCustomerExpense().get(0).getExpenseList().get(1));
             assertEquals("20-09-2003", wr.getreadCustomerExpense().get(0).getExpenseList().get(2));
             assertEquals("Eatout", wr.getreadCustomerExpense().get(0).getCategory().get(0));
+            assertEquals(2000.0, wr.getreadCustomerExpense().get(0).getExpenseLimit());
 
 
             assertEquals("Pasta", wr.getreadCustomerExpense().get(0).getExpenseList().get(3));

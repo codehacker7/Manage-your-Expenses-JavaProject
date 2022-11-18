@@ -6,6 +6,7 @@ import model.Expenses;
 import org.json.JSONObject;
 import persistence.JsonReader;
 import persistence.JsonWriter;
+
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -26,6 +27,9 @@ public class Main {
 
         System.out.println("Enter your id which will be used by you for accessing your data later: ");
         int id = r.nextInt();
+
+
+
 
         Customer user = new Customer(customername, id);
 
@@ -151,7 +155,7 @@ public class Main {
         JSONObject c3 = reader.read(); // FULL JSON OBJECT
         JsonWriter writer1 = new JsonWriter(destination);
         writer1.open();
-        writer1.write(c3,c, id);
+        writer1.write(c3, c, id);
         writer1.close();
     }
 

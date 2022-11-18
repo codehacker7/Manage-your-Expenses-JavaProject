@@ -2,8 +2,10 @@ package model;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+import ui.ExpensesApp;
 
-import javax.print.DocFlavor;
+import javax.swing.*;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +20,7 @@ public class Customer {
     private String customername;
     List<Expenses> expenses = new ArrayList<>();
     List<Expenses> readexpenses = new ArrayList<>();
+
 
     //  REQUIRES : id>=0
 //  EFFECTS : It is used to set the name and the id of the customer
@@ -63,12 +66,40 @@ public class Customer {
         JSONArray jsonArray = c3.getJSONArray("customer");
         JSONObject json = new JSONObject();
         boolean value1 = false;
+        double actualexpenselimit = 0;
 
 
         for (Object jsonattributes : jsonArray) {
             JSONObject jsonobject = (JSONObject) jsonattributes;
             if ((int) jsonobject.get("id") == id) {
                 value1 = true;
+                double jsonexpenselimit = jsonobject.getDouble("expenselimit");
+
+                for (Expenses c : expenses) {
+                    actualexpenselimit = c.getExpenseLimit();
+                    //1000 limit actual
+
+                }
+
+                if (jsonexpenselimit < 2000.0) {
+                    if (actualexpenselimit != 2000.0) {
+                        jsonobject.remove("expenselimit");
+                        jsonobject.put("expenselimit", actualexpenselimit);
+                    } else {
+                        jsonobject.remove("expenselimit");
+                        jsonobject.put("expenselimit", jsonexpenselimit);
+                    }
+                } else {
+                    if (actualexpenselimit != 2000.0) {
+                        jsonobject.remove("expenselimit");
+                        jsonobject.put("expenselimit", actualexpenselimit);
+                    } else {
+                        jsonobject.remove("expenselimit");
+                        jsonobject.put("expenselimit", jsonexpenselimit);
+                    }
+                }
+
+
                 JSONArray expensesarray = jsonobject.getJSONArray("expenses");
                 for (Expenses c : expenses) {
 
@@ -98,6 +129,11 @@ public class Customer {
             JSONObject newjson = new JSONObject();
             newjson.put("name", customername);
             newjson.put("id", id);
+
+            for (Expenses c : expenses) {
+                newjson.put("expenselimit", c.getExpenseLimit());
+            }
+
             newjson.put("expenses", forExpenses());
             jsonArray.put(newjson);
             json.put("customer", jsonArray);
@@ -155,6 +191,9 @@ public class Customer {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("name", customername);
         jsonObject.put("id", id);
+        for (Expenses c : expenses) {
+            jsonObject.put("expenselimit", c.getExpenseLimit());
+        }
         jsonObject.put("expenses", expense3());
 
         jsonArray.put(jsonObject);

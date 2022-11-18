@@ -75,8 +75,10 @@ public class JsonReader {
 
             if ((int) jsonobject.get("id") == id) {
                 addedcustomer = new Customer(name, id);
+                double expenselimit = jsonobject.getDouble("expenselimit"); //new edition
+
                 JSONArray expensesarray = jsonobject.getJSONArray("expenses");
-                addExpenses(expensesarray, addedcustomer);
+                addExpenses(expensesarray, addedcustomer,expenselimit);
             }
         }
 
@@ -89,7 +91,7 @@ public class JsonReader {
     }
 
     //EFFECTS : This method is used to add expensename , date ,category and price to the expenses array in json file
-    private void addExpenses(JSONArray expensesarray, Customer addedcustomer) {
+    private void addExpenses(JSONArray expensesarray, Customer addedcustomer,double expenselimit) {
 
         Expenses expenses = new Expenses();
 
@@ -100,9 +102,10 @@ public class JsonReader {
             String category = jsonobject.getString("category");
             double price = jsonobject.getInt("price");
 
-            expenses.addExpenses(expensename, price, date, category);
 
+            expenses.addExpenses(expensename, price, date, category);
         }
+        expenses.setExpenseLimit(expenselimit);
         addedcustomer.addreadCustomerExpense(expenses);
     }
 

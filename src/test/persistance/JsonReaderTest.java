@@ -34,6 +34,7 @@ public class JsonReaderTest {
             assertEquals(20.0, customer.getreadCustomerExpense().get(0).getExpenseList().get(1));
             assertEquals("20-09-2022", customer.getreadCustomerExpense().get(0).getExpenseList().get(2));
             assertEquals("Eatout", customer.getreadCustomerExpense().get(0).getCategory().get(0));
+            assertEquals(2000.0, customer.getreadCustomerExpense().get(0).getExpenseLimit());
 
             JsonReader reader1 = new JsonReader("./data/expenses1.json");
             JSONObject jsonObject = reader1.read();
@@ -55,6 +56,7 @@ public class JsonReaderTest {
 
 
 
+
         } catch (IOException e) {
             fail("Couldn't read from file");
         }
@@ -68,6 +70,8 @@ public class JsonReaderTest {
             assertEquals("kavyansh", wr.getCustomername());
             assertEquals(1, wr.getId());
             assertTrue(wr.getreadCustomerExpense().get(0).getExpenseList().size()==0);
+            assertEquals(2000.0, wr.getreadCustomerExpense().get(0).getExpenseLimit());
+
 
         } catch (IOException e) {
             fail("Couldn't read from file");
@@ -96,6 +100,7 @@ public class JsonReaderTest {
             JSONObject jsonobject = cus.getJSONObject(0);
             assertEquals("kavyansh", jsonobject.get("name"));
             assertEquals(1, jsonobject.get("id"));
+            assertEquals(2000,jsonobject.get("expenselimit"));
 
 
         }catch (IOException c){

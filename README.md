@@ -22,5 +22,15 @@ everyday expenses
 - As a user, I want to store my expenses
 - As a user, I want to have an id through which I can access my expenses
 - As a user, I want to have a feature to set up a limit on my expenses 
+- As a user, I want to see my available expense limit in the app
 - As a user, I want to view my stored expenses
 - As a user, I want to be able to update my expense limit
+
+# Instructions for Grader
+
+- You can generate the first required event by entering your name and choosing an id number and clicking on save expenses
+- The id number chosen by the user is used to save and load expenses of the user
+- You can locate my visual component by...
+- You can save the state of my application by clicking on the save expenses button and filling the expenses details
+- By Default the user is assigned an expense limit of $2000 although user has the option to change the expense limit at any point of time
+- You can reload your expenses by entering your name and id and clicking on load expenses button in my app

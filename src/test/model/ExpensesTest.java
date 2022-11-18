@@ -32,9 +32,8 @@ public class ExpensesTest {
         assertTrue(expenses.getSize() == 6);
         assertTrue(expenses.getTotalAmountSpent() == (20.2 + 2.99));
         expenses.addExpenses("HouseRent", 4000, "22-10-2022", "Grocery");
-        assertFalse(expenses.getSize() == 9);
+        assertTrue(expenses.getSize() == 9);
         expenses.setExpenseLimit(6000);
-        expenses.addExpenses("HouseRent", 4000, "22-10-2022", "Grocery");
         assertTrue(expenses.getSize() == 9);
         assertTrue(expenses.getExpenseList().get(0) == "Pizza");
         assertTrue(expenses.getExpenseList().get(3) == "ChocoLavaCake");
