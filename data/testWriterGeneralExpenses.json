@@ -372,16 +372,5 @@
                 "expensename": "Pasta"
             }
         ]
-    },
-    {
-        "expenselimit": 2000,
-        "name": "Kevin",
-        "id": 3,
-        "expenses": [{
-            "date": "20-09-2003",
-            "price": 20,
-            "category": "Eatout",
-            "expensename": "Pizza"
-        }]
     }
 ]}
