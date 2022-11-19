@@ -12,6 +12,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
+/*
+This class is used to provide graphical user interface 
+ */
+
 
 public class ExpensesApp implements ActionListener {
 
@@ -49,7 +53,81 @@ public class ExpensesApp implements ActionListener {
 
     public static final String destination = "./data/expenses.json";
 
+
+    //EFFECTS : IT is used to create an delay between the splashing screen and actual app
     public ExpensesApp() {
+
+//        frame = new JFrame();
+//        textfield = new JTextField();
+//        paneltextfield = new JTextField(); //Do not reInitialize it
+//        nametextfield = new JTextField(); //Do not reInitialize it
+//        loadbutton = new JButton();
+//        submitbutton = new JButton();
+//        panel = new JPanel();
+//        label = new JLabel();
+//        newuser = new JButton();
+//        lookexpenses = new JLabel();
+
+
+        new java.util.Timer().schedule(
+                new java.util.TimerTask() {
+                    @Override
+                    public void run() {
+                        constructor();
+
+                    }
+                },
+                4000
+        );
+
+
+        intial();
+
+
+//        setFrame();
+
+    }
+
+
+    //EFFECTS : This method creates the very first beginning logo of the app
+    public void intial() {
+        frame = new JFrame();
+        frame.setTitle("Expense Manager");
+        frame.setResizable(false);
+        frame.setSize(1000, 1000);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.getContentPane().setBackground(Color.BLACK);
+        frame.setLayout(null);
+
+        ImageIcon imageIcon = newImageSetterforGUI();
+        addImage2(imageIcon, 50, 50, 1000, 700);
+
+        frame.setVisible(true);
+
+    }
+
+    //EFFECTS : This method sets the size and modifies and returns the expense-manager-logo.png image
+    private ImageIcon newImageSetterforGUI() {
+        ImageIcon imageIcon = new ImageIcon("expense-manager-logo.png");
+        Image piggyImage = imageIcon.getImage();
+        Image modifiedPiggyImage = piggyImage.getScaledInstance(1000, 1000, Image.SCALE_SMOOTH);
+        imageIcon = new ImageIcon(modifiedPiggyImage);
+
+        return imageIcon;
+
+    }
+
+    //EFFECTS : This method is used to display the image on the screen
+    private void addImage2(ImageIcon imageIcon, int x, int y, int width, int height) {
+        JLabel label = new JLabel();
+        label.setBounds(x, y, width, height);
+        label.setIcon(imageIcon);
+        frame.add(label);
+    }
+
+    //EFFECTS : This is the constructor which is used to set up a JFrame object,JTextFields,JPanel,JLabel,JButton
+    public void constructor() {
+        frame.dispose();
         frame = new JFrame();
         textfield = new JTextField();
         paneltextfield = new JTextField(); //Do not reInitialize it
@@ -63,7 +141,8 @@ public class ExpensesApp implements ActionListener {
         setFrame();
     }
 
-
+    //EFFECTS : This is the constructor which is used to set up title,Color,Layout of the frame and the field Manage
+    //your expenses that a user sees on the top
     public void setFrame() {
         textfield.setBackground(Color.decode("#add8e6"));
         textfield.setBounds(0, 0, 1000, 150);
@@ -86,7 +165,9 @@ public class ExpensesApp implements ActionListener {
         setPanel();
     }
 
+    //EFFECTS : This is the constructor which is used to reintialize refrences
     public void reIntialize() {
+        frame.dispose();
         frame = new JFrame();
         textfield = new JTextField();
         loadbutton = new JButton();
@@ -100,7 +181,8 @@ public class ExpensesApp implements ActionListener {
         setFrame1();
     }
 
-
+    //EFFECTS : This is the constructor which is used to set up title,Color,Layout of the frame and the field Manage
+    //your expenses that a user sees on the top
     public void setFrame1() {
         textfield.setBackground(Color.decode("#add8e6"));
         textfield.setBounds(0, 0, 1000, 150);
@@ -122,6 +204,8 @@ public class ExpensesApp implements ActionListener {
         frame.add(textfield);
     }
 
+    //EFFECTS : This is the constructor which is used to make two textfields for taking the user id and name of the user
+    //This method also makes some buttons
     public void setPanel() {
         panel.setBounds(340, 390, 300, 200);
         panel.setBackground(Color.decode("#add8e6"));
@@ -157,7 +241,7 @@ public class ExpensesApp implements ActionListener {
 
     }
 
-
+    //EFFECTS : This is the constructor which is used to set up the save button
     public void setSaveUser() {
         newuser = new JButton("Save Expenses! ");
         newuser.setFocusable(false);
@@ -178,6 +262,7 @@ public class ExpensesApp implements ActionListener {
 
     }
 
+    //EFFECTS : This method is used to display the image on the screen
     private void addImage(ImageIcon imageIcon, int x, int y, int width, int height) {
         JLabel label = new JLabel();
         label.setBounds(x, y, width, height);
@@ -187,8 +272,8 @@ public class ExpensesApp implements ActionListener {
 
     }
 
+    //EFFECTS : This method sets the size and modifies and returns the expense-manager-logo.png image
     public ImageIcon imageSetter(String path) {
-//        ImageIcon imageIcon = new ImageIcon("piggyimage 2.png");
         ImageIcon imageIcon = new ImageIcon(path);
         Image piggyImage = imageIcon.getImage();
         Image modifiedPiggyImage = piggyImage.getScaledInstance(300, 200, Image.SCALE_SMOOTH);
@@ -199,6 +284,8 @@ public class ExpensesApp implements ActionListener {
     }
 
 
+    //EFFECTS : This method checks which button the user clicked on and perform a bunch of actions like loading expenses
+    //if the user clicked on load button or if the user clicked on save button take the user to next screen
     @Override
     public void actionPerformed(ActionEvent e) {
 
@@ -233,6 +320,7 @@ public class ExpensesApp implements ActionListener {
 
     }
 
+    //EFFECTS : This is used to actually the length of the previous method while performing task of saving expenses
     private void reducemorelength(ActionEvent e, String stringid, String customername) {
         if (e.getSource() == secondButton) {
             setExpensesLabel();
@@ -242,7 +330,12 @@ public class ExpensesApp implements ActionListener {
         }
     }
 
-
+    //EFFECTS : If the user clickes on load button this method loads the expenses of the user
+    //An IO Exception is generated if an error occurs while reading expenses of the user
+    //GENERATES A NEW INTERFACE IF THE USER IS A NEW USER
+    //IF THE USER IS A NEW INTERFACE AND THE USER ENTERS ALL THEIR EXPENSES DETAILS THAN ALL THE DATA SUCH
+    //AS EXPENSE NAME, PRICE,DATE EXPENSE LIMIT(IF FILLED) AND CATEGORY IS EXTRACTED FROM TEXTFIELDS USING OPERATIONS
+    //ON SUBMIT METHOD
     private void actionPerformedHelper(ActionEvent e, String stringid, String customername) {
 
         if (e.getSource() == loadbutton) {
@@ -276,7 +369,9 @@ public class ExpensesApp implements ActionListener {
 
     }
 
-
+    //EFFECTS : IF THE USER IS A NEW INTERFACE AND THE USER ENTERS ALL THEIR EXPENSES DETAILS THAN ALL THE DATA SUCH
+    //AS EXPENSE NAME, PRICE,DATE EXPENSE LIMIT(IF FILLED) AND CATEGORY IS EXTRACTED FROM TEXTFIELDS USING OPERATIONS
+    //ON SUBMIT METHOD
     private void operationsOnSubmit() {
 
         JTextField expenseTextField = setExpensesLabel();
@@ -294,6 +389,7 @@ public class ExpensesApp implements ActionListener {
 
     }
 
+    //EFFECTS : This method is used to extract the full date from the JComboBox in the GUI
     private void operationsHelper(String expenseName, double price) {
         JComboBox datecombo = datelabel();
         String date = (String) datecombo.getSelectedItem();
@@ -310,6 +406,12 @@ public class ExpensesApp implements ActionListener {
 
     }
 
+    //EFFECTS : This method is used to extract the category along with expenseLimit from the JComboBox
+    //  and Textfield in the GUI. As there is an option to keep the expenseLimit Textfield as empty than we need to
+    //do error handling as we are parsing it to double and empty string cannot be parsed to double
+    //If everything goes well than expenses are added to the Expenses object but we also check that if the users
+    //expense Limit is enough to add expenses if the expenses limit is not enough then User is asked to update
+    //their expense limit
     private void operationshelper1(String expenseName, double price, String fullDateDetails) {
 
 
@@ -345,7 +447,9 @@ public class ExpensesApp implements ActionListener {
 
     }
 
-
+    //EFFECTS : This method is used to read the data from json file and parse it to Customer object and then
+    //it checks that if the id is not -1 that means that there is an user with the given id then reduce length method is
+    //called
     private void checkLimitMessage(Expenses ex, double price, int id) {
 
         try {
@@ -366,6 +470,11 @@ public class ExpensesApp implements ActionListener {
 
     }
 
+
+    //EFFECTS : This is an helper method which prints Sorry your expenselimit is not enough to add this expense.
+    // Please update it if the expense limit of the user is not enough to add expenses
+    //else it makes expenselimitcount = true and  expensecount = true which will help to call the Save expenses method
+    //for the upper code
     @SuppressWarnings({"checkstyle:MethodLength", "checkstyle:SuppressWarnings"})
     private void reducelength(Customer c3, double price) {
         double expenselimit = 0;
@@ -407,7 +516,7 @@ public class ExpensesApp implements ActionListener {
         }
     }
 
-
+    //EFFECTS : This is an GO Back button which is used to take user back to the HomeScreen
     private void expenseLimitmethod(double expenselimit, double price, double totalamountspent) {
 
         expenselimitbutton = new JButton("Go Back");
@@ -421,7 +530,7 @@ public class ExpensesApp implements ActionListener {
 
     }
 
-
+    //EFFECTS : EFFECTS : This method is used to save the expenses of the user
     private void newSaveExpenses(Customer expensecustomer, int convertedid) {
 
         try {
@@ -440,6 +549,9 @@ public class ExpensesApp implements ActionListener {
 
     }
 
+    //EFFECTS : This method is used to reIntialize all the refrences to new objects and print Thanks for
+    //saving expenses with ID number : (ID number of the user)  and the task of this method is also to intialize the
+    //Save Go Back Button
     private void newSaveInterface(Customer expensecustomer, int convertedid) {
 
         reIntialize();
@@ -476,14 +588,16 @@ public class ExpensesApp implements ActionListener {
 
     }
 
+    //EFFECTS : This method is used to add the SavaImage  in the save expenses method
     private void reducelength4() {
         ImageIcon imageIcon = imageSetter("saveimage1.png");
-        addImage(imageIcon,300,490,400,200);
+        addImage(imageIcon, 300, 490, 400, 200);
 
 
     }
 
-
+    //EFFECTS : This method is used to mention Sorry no details found with your given id if the id does not exist
+    //in the system
     public void welcomecustomer(int id) throws IOException {
 
         JsonReader reader = new JsonReader(destination);
@@ -502,6 +616,8 @@ public class ExpensesApp implements ActionListener {
             welcomelabel.setFont(new Font("Arial", Font.ITALIC, 40));
 
             welcomelabel.setText("Sorry no details found with your given id ");
+            ImageIcon imageIcon = imageSetteru("nothingfound.png");
+            addImage(imageIcon, 780, 10, 200, 480);
         } else {
 
             welcomelabel.setText("Welcome Back! : " + customer.getCustomername());
@@ -514,6 +630,18 @@ public class ExpensesApp implements ActionListener {
 
     }
 
+    //EFFECTS : This method sets the size of the image so that it can sit perfectly in the frame
+    public ImageIcon imageSetteru(String path) {
+        ImageIcon imageIcon = new ImageIcon(path);
+        Image piggyImage = imageIcon.getImage();
+        Image modifiedPiggyImage = piggyImage.getScaledInstance(200, 260, Image.SCALE_AREA_AVERAGING);
+        imageIcon = new ImageIcon(modifiedPiggyImage);
+
+        return imageIcon;
+
+    }
+
+    //EFFECTS : This method sets the size and modifies and returns the expense-manager-logo.png image
     public void readExpenses(int id) throws IOException {
         JsonReader reader = new JsonReader(destination);
         customer = reader.read(id);
@@ -550,6 +678,8 @@ public class ExpensesApp implements ActionListener {
 
     }
 
+
+    //EFFECTS : This method is used to display the total expenses of a particular user
     public void totalexpenses(int id) throws IOException {
 
         JsonReader reader = new JsonReader(destination);
@@ -575,6 +705,7 @@ public class ExpensesApp implements ActionListener {
 
     }
 
+    //EFFECTS : This method is used to display Your expense limit is and Available limit is in the load interface
     public void showexpenselimit(int id) throws IOException {
         JsonReader reader = new JsonReader(destination);
         Customer c = reader.read(id);
@@ -602,6 +733,7 @@ public class ExpensesApp implements ActionListener {
 
     }
 
+    //EFFECTS : This method is used to set the GO BACK BUTTON
     private void goBackmethod() {
 
         goBackButton = new JButton("Go Back!");
@@ -616,6 +748,7 @@ public class ExpensesApp implements ActionListener {
 
     }
 
+    //EFFECTS : This method is used to set the ADD EXPENSES BUTTON IN THE FRAME
     private void secondButtonmethod() {
         secondButton = new JButton("Add Expenses!");
         secondButton.setBounds(500, 730, 300, 30);
@@ -628,6 +761,7 @@ public class ExpensesApp implements ActionListener {
     }
 
 
+    //EFFECTS : This method is used to call expenses Label method which in turn causes Expenses : label to form
     public void saveExpenses() {
 
         try {
@@ -641,6 +775,10 @@ public class ExpensesApp implements ActionListener {
 
     }
 
+    //EFFECTS : This method is used to set expenses Label method. Another point is from now on I have used a bunch of
+    //count in my code this is because if the user clicks on submit button then our task is to extract all the data
+    //from textfields but if we do not have a count which makes if condition false then all the refrences will be
+    //reintialized and all the data will be lost so we have a count
     public JTextField setExpensesLabel() {
 
 
@@ -670,6 +808,7 @@ public class ExpensesApp implements ActionListener {
 
     }
 
+    //EFFECTS : This method is used to set the price label of the method
     private JTextField pricelabel() {
 
         if (!count) {
@@ -696,6 +835,7 @@ public class ExpensesApp implements ActionListener {
 
     }
 
+    //EFFECTS : This method is used to set the date field in JCOMBOBOX
     private JComboBox datelabel() {
 
 
@@ -735,6 +875,7 @@ public class ExpensesApp implements ActionListener {
 
     }
 
+    //EFFECTS : This method is used to set the CATEGORY field in JCOMBOBOX
     private JComboBox setCategory() {
 
 
@@ -765,7 +906,7 @@ public class ExpensesApp implements ActionListener {
 
     }
 
-
+    //EFFECTS : This method is used to set the expenselimit label and textfield
     private JTextField expenseLimit() {
 
         if (!count) {
@@ -790,6 +931,7 @@ public class ExpensesApp implements ActionListener {
 
     }
 
+    //EFFECTS : This method is used to set the line Note - By default users are assingned an expense limit of $2000
     private void expenseLimitMessage() {
         JLabel expenselabel = new JLabel();
         expenselabel.setBounds(0, 540, 1000, 30);
@@ -803,7 +945,7 @@ public class ExpensesApp implements ActionListener {
 
     }
 
-
+    //EFFECTS : This method is used to set the month in JComboBox
     private JComboBox setMonth() {
 
         if (!count) {
@@ -829,6 +971,7 @@ public class ExpensesApp implements ActionListener {
 
     }
 
+    //EFFECTS : This method is used to set the year in JComboBox
     private JComboBox setYear() {
 
         if (!count) {
@@ -850,6 +993,8 @@ public class ExpensesApp implements ActionListener {
 
     }
 
+    //EFFECTS: This method is used to put an piggy bank image on the save interface along with setting up the
+    //submitbutton
     private void submit() {
         submitbutton.setBounds(390, 450, 100, 30);
         submitbutton.setText("Submit! ");

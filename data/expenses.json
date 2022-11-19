@@ -63,24 +63,6 @@
                 "price": 54.5,
                 "category": "Eatout",
                 "expensename": "newIndianBuffet"
-            },
-            {
-                "date": "6 Apr 2025",
-                "price": 23,
-                "category": "Education",
-                "expensename": "kk"
-            },
-            {
-                "date": "1 Jan 2022",
-                "price": 2,
-                "category": "Grocery",
-                "expensename": "kk"
-            },
-            {
-                "date": "1 Jan 2022",
-                "price": 4,
-                "category": "Grocery",
-                "expensename": "ss"
             }
         ]
     },
