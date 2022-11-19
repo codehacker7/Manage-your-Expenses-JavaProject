@@ -109,7 +109,7 @@ public class JsonWriterTest {
 
             JsonWriter writer = new JsonWriter("./data/testWriterGeneralExpenses.json");
             writer.open();
-            //writer.write(jsonObject, w3, w3.getId());
+            writer.write(jsonObject, w3, w3.getId());
             //this should only be executed when you need to increase your code coverege  on auto bot
             writer.write(jsonObject, wr1, wr1.getId());
             writer.close();
