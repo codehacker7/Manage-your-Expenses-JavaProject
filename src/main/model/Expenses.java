@@ -98,7 +98,8 @@ public class Expenses {
         for (int i = 0; i < expenseList.size(); i += 3) {
             s = s + "Expense:  " + expenseList.get(i) + " with the price being : "
                     + expenseList.get(i + 1) + " was purchased on "
-                    + expenseList.get(i + 2) + "\n";
+                    + expenseList.get(i + 2);
+//            + "\n";
         }
         return s;
 

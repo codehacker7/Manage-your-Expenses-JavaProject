@@ -1,6 +1,7 @@
 package ui;
 
 import model.Customer;
+import model.EventLogging;
 import model.Expenses;
 import org.json.JSONObject;
 import persistence.JsonReader;
@@ -8,16 +9,16 @@ import persistence.JsonWriter;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import java.io.IOException;
+
 
 /*
 This class is used to provide graphical user interface 
  */
 
 
-public class ExpensesApp implements ActionListener {
+public class ExpensesApp implements ActionListener, WindowListener {
 
 
     JFrame frame;
@@ -88,6 +89,13 @@ public class ExpensesApp implements ActionListener {
 
     }
 
+    private void finalouput() {
+        EventLogging.printEventsInLog();
+        System.exit(0);
+
+    }
+
+
 
     //EFFECTS : This method creates the very first beginning logo of the app
     public void intial() {
@@ -95,12 +103,16 @@ public class ExpensesApp implements ActionListener {
         frame.setTitle("Expense Manager");
         frame.setResizable(false);
         frame.setSize(1000, 1000);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         frame.getContentPane().setBackground(Color.BLACK);
         frame.setLayout(null);
+        frame.addWindowListener(this);
+
 
         ImageIcon imageIcon = newImageSetterforGUI();
-        addImage2(imageIcon, 50, 50, 1000, 700);
+        addImage2(imageIcon, 0, 0, 1000, 1000);
+
 
         frame.setVisible(true);
 
@@ -138,6 +150,9 @@ public class ExpensesApp implements ActionListener {
         label = new JLabel();
         newuser = new JButton();
         lookexpenses = new JLabel();
+
+
+
         setFrame();
     }
 
@@ -158,10 +173,14 @@ public class ExpensesApp implements ActionListener {
         frame.setTitle("Expense Manager");
         frame.setResizable(false);
         frame.setSize(1000, 1000);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         frame.getContentPane().setBackground(Color.BLUE);
         frame.setLayout(null);
         frame.add(textfield);
+        frame.addWindowListener(this);
+
+
         setPanel();
     }
 
@@ -178,6 +197,8 @@ public class ExpensesApp implements ActionListener {
         expenseTextField = new JTextField();
         priceTextField = new JTextField();
         expenseLimit = new JTextField();
+        frame.addWindowListener(this);
+
         setFrame1();
     }
 
@@ -198,9 +219,12 @@ public class ExpensesApp implements ActionListener {
         frame.setTitle("Expense Manager");
         frame.setResizable(false);
         frame.setSize(1000, 1000);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         frame.getContentPane().setBackground(Color.BLUE);
         frame.setLayout(null);
+        frame.addWindowListener(this);
+
         frame.add(textfield);
     }
 
@@ -236,6 +260,7 @@ public class ExpensesApp implements ActionListener {
         frame.add(nametextfield);
         frame.add(panel);
         panel.add(label);
+
         frame.setVisible(true);
 
 
@@ -256,6 +281,7 @@ public class ExpensesApp implements ActionListener {
         ImageIcon imageIcon1 = imageSetter("welcome2.png");
 
 
+
         addImage(imageIcon1, 30, 150, 400, 330);
         addImage(imageIcon, 650, 510, 450, 330);
 
@@ -267,6 +293,7 @@ public class ExpensesApp implements ActionListener {
         JLabel label = new JLabel();
         label.setBounds(x, y, width, height);
         label.setIcon(imageIcon);
+
         frame.add(label);
 
 
@@ -278,6 +305,7 @@ public class ExpensesApp implements ActionListener {
         Image piggyImage = imageIcon.getImage();
         Image modifiedPiggyImage = piggyImage.getScaledInstance(300, 200, Image.SCALE_SMOOTH);
         imageIcon = new ImageIcon(modifiedPiggyImage);
+
 
         return imageIcon;
 
@@ -344,9 +372,11 @@ public class ExpensesApp implements ActionListener {
             Customer user = new Customer(customername, id);
             try {
                 readExpenses(user.getId());
+                EventLogging.loadexpenses(customer.getreadCustomerExpense(),customer);
                 totalexpenses(user.getId());
                 welcomecustomer(user.getId());
                 showexpenselimit(user.getId());
+
             } catch (IOException c) {
                 System.out.println("IO Exception was not expected");
             }
@@ -355,6 +385,7 @@ public class ExpensesApp implements ActionListener {
         if (e.getSource() == newuser) {
             convertedid = Integer.parseInt(stringid);
             expensecustomer = new Customer(customername, convertedid);
+            EventLogging.saveaddCustomer(convertedid, expensecustomer.getCustomername());
             saveExpenses();
 
 
@@ -363,6 +394,7 @@ public class ExpensesApp implements ActionListener {
         if (e.getSource() == submitbutton) {
             count = true;
             operationsOnSubmit();
+
 
         }
 
@@ -489,6 +521,7 @@ public class ExpensesApp implements ActionListener {
 
             if (expenselimitcheck) {
                 expenselimit = ex.getExpenseLimit();
+                EventLogging.expensesLimitupdated(expenselimit);
             }
 
 
@@ -552,6 +585,7 @@ public class ExpensesApp implements ActionListener {
     //EFFECTS : This method is used to reIntialize all the refrences to new objects and print Thanks for
     //saving expenses with ID number : (ID number of the user)  and the task of this method is also to intialize the
     //Save Go Back Button
+    @SuppressWarnings({"checkstyle:MethodLength", "checkstyle:SuppressWarnings"})
     private void newSaveInterface(Customer expensecustomer, int convertedid) {
 
         reIntialize();
@@ -562,6 +596,12 @@ public class ExpensesApp implements ActionListener {
         label.setFont(new Font("Arial", Font.ITALIC, 30));
         label.setText("Thanks " + expensecustomer.getCustomername() + " for saving expenses "
                 + "with ID number " + expensecustomer.getId());
+        EventLogging.addExpensesLogger(expensecustomer);
+//        EventLogging.printEventsInLog();
+
+//        EventLogging.addCustomer(expensecustomer); *************************
+
+
         label.setForeground(Color.MAGENTA);
 
         JLabel newlabel = new JLabel();
@@ -621,6 +661,8 @@ public class ExpensesApp implements ActionListener {
         } else {
 
             welcomelabel.setText("Welcome Back! : " + customer.getCustomername());
+            EventLogging.loadCustomer(id,customer.getCustomername());
+//            EventLogging.addCustomer(customer);
         }
 
 
@@ -642,6 +684,7 @@ public class ExpensesApp implements ActionListener {
     }
 
     //EFFECTS : This method sets the size and modifies and returns the expense-manager-logo.png image
+    @SuppressWarnings({"checkstyle:MethodLength", "checkstyle:SuppressWarnings"})
     public void readExpenses(int id) throws IOException {
         JsonReader reader = new JsonReader(destination);
         customer = reader.read(id);
@@ -674,6 +717,7 @@ public class ExpensesApp implements ActionListener {
         textarea.setEditable(false);
 
         frame.add(scrollPane1);
+//        EventLogging.addCustomer(id,customer.getCustomername());
         frame.setVisible(true);
 
     }
@@ -1002,16 +1046,51 @@ public class ExpensesApp implements ActionListener {
         submitbutton.addActionListener(this);
         frame.add(submitbutton);
 
-
         ImageIcon imageIcon = imageSetter("piggyimage 2.png");
         addImage(imageIcon, 340, 530, 450, 300);
         frame.setVisible(true);
+
     }
 
 
     public static void main(String[] args) {
+
         ExpensesApp app = new ExpensesApp();
     }
 
 
+    @Override
+    public void windowOpened(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowClosing(WindowEvent e) {
+        finalouput();
+    }
+
+    @Override
+    public void windowClosed(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowIconified(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowDeiconified(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowActivated(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowDeactivated(WindowEvent e) {
+
+    }
 }

@@ -63,6 +63,42 @@
                 "price": 54.5,
                 "category": "Eatout",
                 "expensename": "newIndianBuffet"
+            },
+            {
+                "date": "1 Jan 2022",
+                "price": 1,
+                "category": "Grocery",
+                "expensename": "k"
+            },
+            {
+                "date": "18 Nov 2022",
+                "price": 30,
+                "category": "Eatout",
+                "expensename": "eatout"
+            },
+            {
+                "date": "30 Nov 2022",
+                "price": 3,
+                "category": "Eatout",
+                "expensename": "bagel"
+            },
+            {
+                "date": "30 Nov 2022",
+                "price": 33,
+                "category": "Eatout",
+                "expensename": "maggi"
+            },
+            {
+                "date": "1 Jan 2022",
+                "price": 0.33,
+                "category": "Grocery",
+                "expensename": "maggi"
+            },
+            {
+                "date": "1 Jan 2022",
+                "price": 0.33,
+                "category": "Grocery",
+                "expensename": "maggi"
             }
         ]
     },
@@ -76,5 +112,74 @@
             "category": "Other",
             "expensename": "Pizza"
         }]
+    },
+    {
+        "expenselimit": 2000,
+        "name": "test",
+        "id": 984,
+        "expenses": [
+            {
+                "date": "1 Jan 2022",
+                "price": 1,
+                "category": "Grocery",
+                "expensename": "a"
+            },
+            {
+                "date": "1 Jan 2022",
+                "price": 2,
+                "category": "Grocery",
+                "expensename": "b"
+            },
+            {
+                "date": "1 Jan 2022",
+                "price": 4,
+                "category": "Grocery",
+                "expensename": "a"
+            },
+            {
+                "date": "1 Jan 2022",
+                "price": 8,
+                "category": "Grocery",
+                "expensename": "d"
+            }
+        ]
+    },
+    {
+        "expenselimit": 2000,
+        "name": "test",
+        "id": 100922,
+        "expenses": [
+            {
+                "date": "1 Jan 2022",
+                "price": 1,
+                "category": "Grocery",
+                "expensename": "a"
+            },
+            {
+                "date": "1 Jan 2022",
+                "price": 2,
+                "category": "Grocery",
+                "expensename": "b"
+            }
+        ]
+    },
+    {
+        "expenselimit": 2000,
+        "name": "test",
+        "id": 900000,
+        "expenses": [
+            {
+                "date": "4 Jun 2026",
+                "price": 19,
+                "category": "Eatout",
+                "expensename": "a"
+            },
+            {
+                "date": "6 Jan 2022",
+                "price": 34,
+                "category": "Eatout",
+                "expensename": "sjs"
+            }
+        ]
     }
 ]}

@@ -108,9 +108,10 @@ public class ExpensesTest {
     @Test
     public void Testdisplayallexpenses() {
         expenses.addExpenses("Burger", 15, "9-12-2022", "Eatout");
-        String v = "Expense:  Burger with the price being : 15.0 was purchased on 9-12-2022\n";
+        String v = "Expense:  Burger with the price being : 15.0 was purchased on 9-12-2022";
+        String m = "Expense:  Burger with the price being : 15.0 was purchased on 9-12-2022\n";
         assertEquals(v, expenses.displayAllExpenses());
-        assertEquals(v, expenses.displayEatOutExpenses());
+        assertEquals(m, expenses.displayEatOutExpenses());
     }
 
     @Test

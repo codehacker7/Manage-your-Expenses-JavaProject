@@ -36,3 +36,26 @@ everyday expenses
 - You can reload your expenses by **entering your name and id** and clicking on load expenses button in my app
 - You will land on the Screen **Sorry no expenses** found if id number does not exist in the system
 - You will land on screen **sorry your expense limit is not enough** to add expense if you are crossing your expense limit
+  
+# Phase 4: Task 2
+
+Tue Nov 29 21:15:45 PST 2022
+Thank you kavyansh for saving details with id number 1
+
+Tue Nov 29 21:15:51 PST 2022
+New Expense : abc with the price being : 1.0 was purchased on 1 Jan 2022 has been successfully added
+
+Tue Nov 29 21:19:17 PST 2022
+Your expense limit has been updated to 30000.0
+
+Wed Nov 30 19:37:34 PST 2022
+Thank you kavyansh for viewing your expenses 1
+
+Wed Nov 30 19:37:34 PST 2022
+You purchased  Pasta with price being  $ 20.0 and the purchase was made on : 20 Sep 2022 which belongs to : Eatout
+
+# Phase4: Task 3
+I believe that I am quite satisifed with the design of my program because I have an Customer class
+which has some attriutes of the type expenses so technically there wil be a Customer who has all the expenses 
+and I also have an Expense Divider class which is basically calculating the percentage of all the expenses
+categories
