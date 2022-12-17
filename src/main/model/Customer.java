@@ -17,6 +17,7 @@ This class is used to access the name and id of the customer
 public class Customer {
 
     private int id;
+    //private int cus
     private String customername;
     List<Expenses> expenses = new ArrayList<>();
     List<Expenses> readexpenses = new ArrayList<>();
