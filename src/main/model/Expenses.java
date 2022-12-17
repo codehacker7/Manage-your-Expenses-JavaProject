@@ -10,7 +10,6 @@ This class is used to manage all the expenses of the user
 
 
 public class Expenses {
-
     private ArrayList expenseList = new ArrayList();
     private ArrayList education = new ArrayList();
     private ArrayList entertainment = new ArrayList();
