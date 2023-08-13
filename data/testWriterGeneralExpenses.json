@@ -420,5 +420,490 @@
                 "expensename": "Pasta"
             }
         ]
+    },
+    {
+        "expenselimit": 2000,
+        "name": "Kevin",
+        "id": 3,
+        "expenses": [
+            {
+                "date": "20-09-2003",
+                "price": 20,
+                "category": "Eatout",
+                "expensename": "Pizza"
+            },
+            {
+                "date": "20-09-2003",
+                "price": 20,
+                "category": "Eatout",
+                "expensename": "Pizza"
+            },
+            {
+                "date": "20-09-2003",
+                "price": 20,
+                "category": "Eatout",
+                "expensename": "Pizza"
+            }
+        ]
+    }
+]}{"customer": [
+    {
+        "expenselimit": 2000,
+        "name": "Kavyansh",
+        "id": 1,
+        "expenses": [
+            {
+                "date": "20-09-2003",
+                "price": 20,
+                "category": "Eatout",
+                "expensename": "Pizza"
+            },
+            {
+                "date": "11-01-2022",
+                "price": 10,
+                "category": "Eatout",
+                "expensename": "Pasta"
+            }
+        ]
+    },
+    {
+        "expenselimit": 2000,
+        "name": "Pranjal",
+        "id": 2,
+        "expenses": [
+            {
+                "date": "20-09-2003",
+                "price": 20,
+                "category": "Eatout",
+                "expensename": "Pizza"
+            },
+            {
+                "date": "11-01-2022",
+                "price": 10,
+                "category": "Eatout",
+                "expensename": "Pasta"
+            },
+            {
+                "date": "20-09-2003",
+                "price": 20,
+                "category": "Eatout",
+                "expensename": "Pizza"
+            },
+            {
+                "date": "11-01-2022",
+                "price": 10,
+                "category": "Eatout",
+                "expensename": "Pasta"
+            },
+            {
+                "date": "20-09-2003",
+                "price": 20,
+                "category": "Eatout",
+                "expensename": "Pizza"
+            },
+            {
+                "date": "11-01-2022",
+                "price": 10,
+                "category": "Eatout",
+                "expensename": "Pasta"
+            },
+            {
+                "date": "20-09-2003",
+                "price": 20,
+                "category": "Eatout",
+                "expensename": "Pizza"
+            },
+            {
+                "date": "11-01-2022",
+                "price": 10,
+                "category": "Eatout",
+                "expensename": "Pasta"
+            },
+            {
+                "date": "20-09-2003",
+                "price": 20,
+                "category": "Eatout",
+                "expensename": "Pizza"
+            },
+            {
+                "date": "11-01-2022",
+                "price": 10,
+                "category": "Eatout",
+                "expensename": "Pasta"
+            },
+            {
+                "date": "20-09-2003",
+                "price": 20,
+                "category": "Eatout",
+                "expensename": "Pizza"
+            },
+            {
+                "date": "11-01-2022",
+                "price": 10,
+                "category": "Eatout",
+                "expensename": "Pasta"
+            },
+            {
+                "date": "20-09-2003",
+                "price": 20,
+                "category": "Eatout",
+                "expensename": "Pizza"
+            },
+            {
+                "date": "11-01-2022",
+                "price": 10,
+                "category": "Eatout",
+                "expensename": "Pasta"
+            },
+            {
+                "date": "20-09-2003",
+                "price": 20,
+                "category": "Eatout",
+                "expensename": "Pizza"
+            },
+            {
+                "date": "11-01-2022",
+                "price": 10,
+                "category": "Eatout",
+                "expensename": "Pasta"
+            },
+            {
+                "date": "20-09-2003",
+                "price": 20,
+                "category": "Eatout",
+                "expensename": "Pizza"
+            },
+            {
+                "date": "11-01-2022",
+                "price": 10,
+                "category": "Eatout",
+                "expensename": "Pasta"
+            },
+            {
+                "date": "20-09-2003",
+                "price": 20,
+                "category": "Eatout",
+                "expensename": "Pizza"
+            },
+            {
+                "date": "11-01-2022",
+                "price": 10,
+                "category": "Eatout",
+                "expensename": "Pasta"
+            },
+            {
+                "date": "20-09-2003",
+                "price": 20,
+                "category": "Eatout",
+                "expensename": "Pizza"
+            },
+            {
+                "date": "11-01-2022",
+                "price": 10,
+                "category": "Eatout",
+                "expensename": "Pasta"
+            },
+            {
+                "date": "20-09-2003",
+                "price": 20,
+                "category": "Eatout",
+                "expensename": "Pizza"
+            },
+            {
+                "date": "11-01-2022",
+                "price": 10,
+                "category": "Eatout",
+                "expensename": "Pasta"
+            },
+            {
+                "date": "20-09-2003",
+                "price": 20,
+                "category": "Eatout",
+                "expensename": "Pizza"
+            },
+            {
+                "date": "11-01-2022",
+                "price": 10,
+                "category": "Eatout",
+                "expensename": "Pasta"
+            },
+            {
+                "date": "20-09-2003",
+                "price": 20,
+                "category": "Eatout",
+                "expensename": "Pizza"
+            },
+            {
+                "date": "11-01-2022",
+                "price": 10,
+                "category": "Eatout",
+                "expensename": "Pasta"
+            },
+            {
+                "date": "20-09-2003",
+                "price": 20,
+                "category": "Eatout",
+                "expensename": "Pizza"
+            },
+            {
+                "date": "11-01-2022",
+                "price": 10,
+                "category": "Eatout",
+                "expensename": "Pasta"
+            },
+            {
+                "date": "20-09-2003",
+                "price": 20,
+                "category": "Eatout",
+                "expensename": "Pizza"
+            },
+            {
+                "date": "11-01-2022",
+                "price": 10,
+                "category": "Eatout",
+                "expensename": "Pasta"
+            },
+            {
+                "date": "20-09-2003",
+                "price": 20,
+                "category": "Eatout",
+                "expensename": "Pizza"
+            },
+            {
+                "date": "11-01-2022",
+                "price": 10,
+                "category": "Eatout",
+                "expensename": "Pasta"
+            },
+            {
+                "date": "20-09-2003",
+                "price": 20,
+                "category": "Eatout",
+                "expensename": "Pizza"
+            },
+            {
+                "date": "11-01-2022",
+                "price": 10,
+                "category": "Eatout",
+                "expensename": "Pasta"
+            },
+            {
+                "date": "20-09-2003",
+                "price": 20,
+                "category": "Eatout",
+                "expensename": "Pizza"
+            },
+            {
+                "date": "11-01-2022",
+                "price": 10,
+                "category": "Eatout",
+                "expensename": "Pasta"
+            },
+            {
+                "date": "20-09-2003",
+                "price": 20,
+                "category": "Eatout",
+                "expensename": "Pizza"
+            },
+            {
+                "date": "11-01-2022",
+                "price": 10,
+                "category": "Eatout",
+                "expensename": "Pasta"
+            },
+            {
+                "date": "20-09-2003",
+                "price": 20,
+                "category": "Eatout",
+                "expensename": "Pizza"
+            },
+            {
+                "date": "11-01-2022",
+                "price": 10,
+                "category": "Eatout",
+                "expensename": "Pasta"
+            },
+            {
+                "date": "20-09-2003",
+                "price": 20,
+                "category": "Eatout",
+                "expensename": "Pizza"
+            },
+            {
+                "date": "11-01-2022",
+                "price": 10,
+                "category": "Eatout",
+                "expensename": "Pasta"
+            },
+            {
+                "date": "20-09-2003",
+                "price": 20,
+                "category": "Eatout",
+                "expensename": "Pizza"
+            },
+            {
+                "date": "11-01-2022",
+                "price": 10,
+                "category": "Eatout",
+                "expensename": "Pasta"
+            },
+            {
+                "date": "20-09-2003",
+                "price": 20,
+                "category": "Eatout",
+                "expensename": "Pizza"
+            },
+            {
+                "date": "11-01-2022",
+                "price": 10,
+                "category": "Eatout",
+                "expensename": "Pasta"
+            },
+            {
+                "date": "20-09-2003",
+                "price": 20,
+                "category": "Eatout",
+                "expensename": "Pizza"
+            },
+            {
+                "date": "11-01-2022",
+                "price": 10,
+                "category": "Eatout",
+                "expensename": "Pasta"
+            },
+            {
+                "date": "20-09-2003",
+                "price": 20,
+                "category": "Eatout",
+                "expensename": "Pizza"
+            },
+            {
+                "date": "11-01-2022",
+                "price": 10,
+                "category": "Eatout",
+                "expensename": "Pasta"
+            },
+            {
+                "date": "20-09-2003",
+                "price": 20,
+                "category": "Eatout",
+                "expensename": "Pizza"
+            },
+            {
+                "date": "11-01-2022",
+                "price": 10,
+                "category": "Eatout",
+                "expensename": "Pasta"
+            },
+            {
+                "date": "20-09-2003",
+                "price": 20,
+                "category": "Eatout",
+                "expensename": "Pizza"
+            },
+            {
+                "date": "11-01-2022",
+                "price": 10,
+                "category": "Eatout",
+                "expensename": "Pasta"
+            },
+            {
+                "date": "20-09-2003",
+                "price": 20,
+                "category": "Eatout",
+                "expensename": "Pizza"
+            },
+            {
+                "date": "11-01-2022",
+                "price": 10,
+                "category": "Eatout",
+                "expensename": "Pasta"
+            },
+            {
+                "date": "20-09-2003",
+                "price": 20,
+                "category": "Eatout",
+                "expensename": "Pizza"
+            },
+            {
+                "date": "11-01-2022",
+                "price": 10,
+                "category": "Eatout",
+                "expensename": "Pasta"
+            },
+            {
+                "date": "20-09-2003",
+                "price": 20,
+                "category": "Eatout",
+                "expensename": "Pizza"
+            },
+            {
+                "date": "11-01-2022",
+                "price": 10,
+                "category": "Eatout",
+                "expensename": "Pasta"
+            },
+            {
+                "date": "20-09-2003",
+                "price": 20,
+                "category": "Eatout",
+                "expensename": "Pizza"
+            },
+            {
+                "date": "11-01-2022",
+                "price": 10,
+                "category": "Eatout",
+                "expensename": "Pasta"
+            },
+            {
+                "date": "20-09-2003",
+                "price": 20,
+                "category": "Eatout",
+                "expensename": "Pizza"
+            },
+            {
+                "date": "11-01-2022",
+                "price": 10,
+                "category": "Eatout",
+                "expensename": "Pasta"
+            },
+            {
+                "date": "20-09-2003",
+                "price": 20,
+                "category": "Eatout",
+                "expensename": "Pizza"
+            },
+            {
+                "date": "11-01-2022",
+                "price": 10,
+                "category": "Eatout",
+                "expensename": "Pasta"
+            }
+        ]
+    },
+    {
+        "expenselimit": 2000,
+        "name": "Kevin",
+        "id": 3,
+        "expenses": [
+            {
+                "date": "20-09-2003",
+                "price": 20,
+                "category": "Eatout",
+                "expensename": "Pizza"
+            },
+            {
+                "date": "20-09-2003",
+                "price": 20,
+                "category": "Eatout",
+                "expensename": "Pizza"
+            },
+            {
+                "date": "20-09-2003",
+                "price": 20,
+                "category": "Eatout",
+                "expensename": "Pizza"
+            }
+        ]
     }
 ]}

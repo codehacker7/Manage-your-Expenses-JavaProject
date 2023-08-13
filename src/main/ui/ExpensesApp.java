@@ -7,6 +7,7 @@ import org.json.JSONObject;
 import persistence.JsonReader;
 import persistence.JsonWriter;
 
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -14,8 +15,9 @@ import java.io.IOException;
 
 
 /*
-This class is used to provide graphical user interface 
+This class is used to provide graphical user interface
  */
+
 
 
 public class ExpensesApp implements ActionListener, WindowListener {
@@ -50,6 +52,7 @@ public class ExpensesApp implements ActionListener, WindowListener {
     JButton saveGoBackButton;
     JButton expenselimitbutton;
     JButton secondButton;
+    JButton removeExpenses;
 
 
     public static final String destination = "./data/expenses.json";
@@ -94,7 +97,6 @@ public class ExpensesApp implements ActionListener, WindowListener {
         System.exit(0);
 
     }
-
 
 
     //EFFECTS : This method creates the very first beginning logo of the app
@@ -152,7 +154,6 @@ public class ExpensesApp implements ActionListener, WindowListener {
         lookexpenses = new JLabel();
 
 
-
         setFrame();
     }
 
@@ -186,18 +187,20 @@ public class ExpensesApp implements ActionListener, WindowListener {
 
     //EFFECTS : This is the constructor which is used to reintialize refrences
     public void reIntialize() {
-        frame.dispose();
-        frame = new JFrame();
-        textfield = new JTextField();
-        loadbutton = new JButton();
-        panel = new JPanel();
-        label = new JLabel();
-        newuser = new JButton();
-        lookexpenses = new JLabel();
-        expenseTextField = new JTextField();
-        priceTextField = new JTextField();
-        expenseLimit = new JTextField();
-        frame.addWindowListener(this);
+        // frame.dispose();
+        if (frame != null) {
+            frame = new JFrame();
+            textfield = new JTextField();
+            loadbutton = new JButton();
+            panel = new JPanel();
+            label = new JLabel();
+            newuser = new JButton();
+            lookexpenses = new JLabel();
+            expenseTextField = new JTextField();
+            priceTextField = new JTextField();
+            expenseLimit = new JTextField();
+            frame.addWindowListener(this);
+        }
 
         setFrame1();
     }
@@ -281,7 +284,6 @@ public class ExpensesApp implements ActionListener, WindowListener {
         ImageIcon imageIcon1 = imageSetter("welcome2.png");
 
 
-
         addImage(imageIcon1, 30, 150, 400, 330);
         addImage(imageIcon, 650, 510, 450, 330);
 
@@ -345,6 +347,15 @@ public class ExpensesApp implements ActionListener, WindowListener {
             ex = new Expenses();
             setExpensesLabel();
         }
+        if (e.getSource() == removeExpenses) {
+            reIntialize();
+            JLabel label = new JLabel("Sorry this feature is not yet supported. Under Progress!");
+            label.setFont(new Font("MV BOLI",Font.ITALIC,30));
+            label.setForeground(Color.YELLOW);
+            label.setBounds(0,200,800,200);
+            frame.add(label);
+            frame.setVisible(true);
+        }
 
     }
 
@@ -372,7 +383,7 @@ public class ExpensesApp implements ActionListener, WindowListener {
             Customer user = new Customer(customername, id);
             try {
                 readExpenses(user.getId());
-                EventLogging.loadexpenses(customer.getreadCustomerExpense(),customer);
+                EventLogging.loadexpenses(customer.getreadCustomerExpense(), customer);
                 totalexpenses(user.getId());
                 welcomecustomer(user.getId());
                 showexpenselimit(user.getId());
@@ -661,7 +672,7 @@ public class ExpensesApp implements ActionListener, WindowListener {
         } else {
 
             welcomelabel.setText("Welcome Back! : " + customer.getCustomername());
-            EventLogging.loadCustomer(id,customer.getCustomername());
+            EventLogging.loadCustomer(id, customer.getCustomername());
 //            EventLogging.addCustomer(customer);
         }
 
@@ -800,6 +811,7 @@ public class ExpensesApp implements ActionListener, WindowListener {
         secondButton.setBackground(Color.pink);
         secondButton.addActionListener(this);
         frame.add(secondButton);
+        removeExpensesFeature();
         frame.setVisible(true);
 
     }
@@ -989,6 +1001,7 @@ public class ExpensesApp implements ActionListener, WindowListener {
 
     }
 
+
     //EFFECTS : This method is used to set the month in JComboBox
     private JComboBox setMonth() {
 
@@ -1052,6 +1065,19 @@ public class ExpensesApp implements ActionListener, WindowListener {
 
     }
 
+    private void removeExpensesFeature() {
+
+        removeExpenses = new JButton("Remove Expense");
+        removeExpenses.setBounds(0, 730, 200, 30);
+        removeExpenses.setFont(new Font("Arial", Font.BOLD, 15));
+        removeExpenses.setBackground(Color.pink);
+        removeExpenses.addActionListener(this);
+
+        frame.add(removeExpenses);
+        frame.setVisible(true);
+
+    }
+
 
     public static void main(String[] args) {
 
@@ -1086,8 +1112,8 @@ public class ExpensesApp implements ActionListener, WindowListener {
 
     @Override
     public void windowActivated(WindowEvent e) {
-
     }
+
 
     @Override
     public void windowDeactivated(WindowEvent e) {

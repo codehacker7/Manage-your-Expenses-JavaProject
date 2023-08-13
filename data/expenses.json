@@ -193,5 +193,171 @@
                 "expensename": "sjs"
             }
         ]
+    },
+    {
+        "expenselimit": 2000,
+        "name": "namitasingla",
+        "id": 981,
+        "expenses": [
+            {
+                "date": "29 Dec 2022",
+                "price": 23,
+                "category": "Eatout",
+                "expensename": "coffee"
+            },
+            {
+                "date": "3 Mar 2023",
+                "price": 12,
+                "category": "Entertainment",
+                "expensename": "abc"
+            },
+            {
+                "date": "6 Sep 2022",
+                "price": 67,
+                "category": "Eatout",
+                "expensename": "pasta"
+            }
+        ]
+    },
+    {
+        "expenselimit": 3000,
+        "name": "nikunj",
+        "id": 18,
+        "expenses": [
+            {
+                "date": "2 Jan 2023",
+                "price": 12,
+                "category": "Grocery",
+                "expensename": "sauce"
+            },
+            {
+                "date": "2 Jan 2022",
+                "price": 18,
+                "category": "Other",
+                "expensename": "cup"
+            },
+            {
+                "date": "1 Jan 2022",
+                "price": 2002,
+                "category": "Grocery",
+                "expensename": "abc"
+            }
+        ]
+    },
+    {
+        "expenselimit": 1000,
+        "name": "ShashiMittal",
+        "id": 17091968,
+        "expenses": [
+            {
+                "date": "6 Jan 2023",
+                "price": 42,
+                "category": "Grocery",
+                "expensename": "grocery"
+            },
+            {
+                "date": "12 Jan 2022",
+                "price": 13,
+                "category": "Entertainment",
+                "expensename": "movie"
+            },
+            {
+                "date": "1 Jan 2022",
+                "price": 20,
+                "category": "Eatout",
+                "expensename": "pizza"
+            },
+            {
+                "date": "1 Jan 2022",
+                "price": 920,
+                "category": "Grocery",
+                "expensename": "abc"
+            }
+        ]
+    },
+    {
+        "expenselimit": 2000,
+        "name": "namitasingla",
+        "id": 5041984,
+        "expenses": [
+            {
+                "date": "7 Jan 2022",
+                "price": 20,
+                "category": "Eatout",
+                "expensename": "pizza"
+            },
+            {
+                "date": "8 Jan 2022",
+                "price": 40,
+                "category": "Eatout",
+                "expensename": "burger"
+            }
+        ]
+    },
+    {
+        "expenselimit": 3000,
+        "name": "ashishdawar",
+        "id": 20,
+        "expenses": [
+            {
+                "date": "4 Mar 2023",
+                "price": 11,
+                "category": "Eatout",
+                "expensename": "brownie"
+            },
+            {
+                "date": "1 Jan 2022",
+                "price": 1990,
+                "category": "Grocery",
+                "expensename": "brownie"
+            }
+        ]
+    },
+    {
+        "expenselimit": 2000,
+        "name": "grega",
+        "id": 1234,
+        "expenses": [
+            {
+                "date": "1 Jan 2022",
+                "price": 200,
+                "category": "Grocery",
+                "expensename": "omege"
+            },
+            {
+                "date": "1 Jan 2022",
+                "price": 0,
+                "category": "Grocery",
+                "expensename": "friend"
+            },
+            {
+                "date": "1 Jan 2022",
+                "price": 3,
+                "category": "Grocery",
+                "expensename": "Mollah"
+            }
+        ]
+    },
+    {
+        "expenselimit": 100000,
+        "name": "Anitej",
+        "id": 34583534,
+        "expenses": [{
+            "date": "30 Apr 2023",
+            "price": 60000,
+            "category": "Education",
+            "expensename": "Tuition"
+        }]
+    },
+    {
+        "expenselimit": 2000,
+        "name": "vishal",
+        "id": 23,
+        "expenses": [{
+            "date": "4 Sep 2023",
+            "price": 200,
+            "category": "Entertainment",
+            "expensename": "coding blocks dsa"
+        }]
     }
 ]}

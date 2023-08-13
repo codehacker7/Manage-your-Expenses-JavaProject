@@ -4,6 +4,11 @@ In todays world everyone has a habit of overspending money and regretting it lat
 how much they spent in 15 days and then they often get worried by overspending. Expense Manager will help the user to
 control the expenses they make in everyday life
 
+*How is it Different from other app's out there or in other words how did i get idea to implement this
+In my project you can categorize my expenses as well unlike other apps which just stores and loads expenses because as a
+university student what I care about the most is on which part do I spend my most money on is it Eating out, Grocery,
+Entertainment or other
+
 
 This is a java based application which is used to manage expenses of a user.
 In this application a user can store their expenses with a ID choosen by them and retreive their expenses whenever 
