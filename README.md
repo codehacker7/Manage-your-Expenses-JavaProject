@@ -21,7 +21,7 @@ expenses in day to day life, thereby by this app I want to help everyone especia
 everyday expenses
 
 
-## User Stories
+## Features
 
 *Features that a user will like to have in the app*:
 - As a user, I want to store my expenses
@@ -31,7 +31,7 @@ everyday expenses
 - As a user, I want to view my stored expenses
 - As a user, I want to be able to update my expense limit
 
-# Instructions for Grader
+# Instructions for Reader
 
 - You can generate the first required event by entering your name and choosing an id number and clicking on save expenses
 - The id number chosen by the user is used to save and load expenses of the user and the user should have id>=0
@@ -42,7 +42,7 @@ everyday expenses
 - You will land on the Screen **Sorry no expenses** found if id number does not exist in the system
 - You will land on screen **sorry your expense limit is not enough** to add expense if you are crossing your expense limit
   
-# Phase 4: Task 2
+# Sample Outputs
 
 Tue Nov 29 21:15:45 PST 2022
 Thank you kavyansh for saving details with id number 1
@@ -58,6 +58,9 @@ Thank you kavyansh for viewing your expenses 1
 
 Wed Nov 30 19:37:34 PST 2022
 You purchased  Pasta with price being  $ 20.0 and the purchase was made on : 20 Sep 2022 which belongs to : Eatout
+
+# Improvements
+Currently work on Learning and using AWS to make it more efficient rather than JSON for the data storage
 
 # Phase4: Task 3
 I believe that I am quite satisifed with the design of my program because I have an Customer class
