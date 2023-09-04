@@ -62,8 +62,3 @@ You purchased  Pasta with price being  $ 20.0 and the purchase was made on : 20 
 # Improvements
 Currently work on Learning and using AWS to make it more efficient rather than JSON for the data storage
 
-# Phase4: Task 3
-I believe that I am quite satisifed with the design of my program because I have an Customer class
-which has some attriutes of the type expenses so technically there wil be a Customer who has all the expenses 
-and I also have an Expense Divider class which is basically calculating the percentage of all the expenses
-categories
